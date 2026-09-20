@@ -107,6 +107,17 @@ export default function Footer() {
           <p>
             KvK 93392230 · KCKZ-nr. 210125
           </p>
+          <p className="text-cream/50">
+            Webdesign door{" "}
+            <a
+              href="https://www.webboostpartner.nl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-cream transition-colors"
+            >
+              Webboostpartner
+            </a>
+          </p>
         </div>
       </div>
     </footer>
@@ -115,21 +126,4 @@ export default function Footer() {
 
 function Year() {
   return <span suppressHydrationWarning>{new Date().getFullYear()}</span>;
-
-  {/* Rechts */}
-              <p className="text-cream/50 text-xs">
-                Webdesign door{" "}
-                <ExternalLink
-                  href="https://www.webboostpartner.nl/"
-                  className="underline hover:text-cream transition-colors"
-                >
-                  Webboostpartner
-                </ExternalLink>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
 }
