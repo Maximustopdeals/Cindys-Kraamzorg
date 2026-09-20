@@ -115,4 +115,21 @@ export default function Footer() {
 
 function Year() {
   return <span suppressHydrationWarning>{new Date().getFullYear()}</span>;
+
+  {/* Rechts */}
+              <p className="text-cream/50 text-xs">
+                Webdesign door{" "}
+                <ExternalLink
+                  href="https://www.webboostpartner.nl/"
+                  className="underline hover:text-cream transition-colors"
+                >
+                  Webboostpartner
+                </ExternalLink>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
