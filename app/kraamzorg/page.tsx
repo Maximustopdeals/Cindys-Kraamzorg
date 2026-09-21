@@ -20,7 +20,7 @@ const onderdelen = [
   },
   {
     title: "Babyverzorging",
-    text: "Differentiëren, verschonen, baden en knuffelen — ik laat je stap voor stap zelfverzekerd worden in de verzorging van je kindje.",
+    text: "Differentiëren, verschonen, baden en knuffelen, ik laat je stap voor stap zelfverzekerd worden in de verzorging van je kindje.",
   },
   {
     title: "Voorlichting & advies",
@@ -28,7 +28,7 @@ const onderdelen = [
   },
   {
     title: "Praktische hulp in huis",
-    text: "Maaltijden bereiden, boodschappen doen en licht huishoudelijk werk — zodat jij kunt rusten en genieten.",
+    text: "Maaltijden bereiden, boodschappen doen en licht huishoudelijk werk zodat jij kunt rusten en genieten.",
   },
   {
     title: "Ook voor partner & gezin",
@@ -40,7 +40,7 @@ const stappen = [
   {
     nr: "1",
     title: "Aanmelden",
-    text: "Vraag via het aanmeldformulier of per telefoon je kraamzorg aan — het liefst vóór week 16 van je zwangerschap.",
+    text: "Vraag via het aanmeldformulier of per telefoon je kraamzorg aan, het liefst vóór week 16 van je zwangerschap.",
   },
   {
     nr: "2",
@@ -94,7 +94,7 @@ export default function KraamzorgPage() {
             Liefdevolle kraamzorg, volledig afgestemd op jullie gezin
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/90">
-            De eerste week met je baby is magisch — en intens. Ik neem je zorgen
+            De eerste week met je baby is magisch en intens. Ik neem je zorgen
             uit handen, zodat jij kunt genieten van deze kostbare dagen.
           </p>
         </div>
