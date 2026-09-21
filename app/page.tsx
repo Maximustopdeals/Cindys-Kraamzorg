@@ -14,7 +14,7 @@ const regios = [
   {
     name: "Hellevoetsluis",
     href: "/kraamzorg-hellevoetsluis",
-    text: "Jouw vertrouwde kraamverzorgende in de eigen plaats — snel bij je aan huis.",
+    text: "Jouw vertrouwde kraamverzorgende in de eigen plaats, snel bij je aan huis.",
   },
   {
     name: "Brielle",
@@ -81,7 +81,7 @@ export default function Home() {
           </h1>
           <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg text-white/90 [animation-delay:150ms]">
             Bij Cindy's Kraamzorg draait alles om jouw vertrouwen en comfort.
-            Met ruim 22 jaar ervaring begeleid ik jullie eerste dagen als gezin —
+            Met ruim 22 jaar ervaring begeleid ik jullie eerste dagen als gezin,
             warm, deskundig en volledig afgestemd op jullie wensen.
           </p>
           <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4 [animation-delay:300ms]">
@@ -116,7 +116,7 @@ export default function Home() {
             <p className="mb-6 leading-relaxed">
               Het is fijn om te weten dat de zorg rondom je bevalling goed is
               geregeld. Ik sta klaar om je hierbij met <strong>vakmanschap en warmte</strong> te
-              begeleiden — van de eerste dag tot een zorgeloze overdracht.
+              begeleiden van de eerste dag tot een zorgeloze overdracht.
             </p>
             <a href={AANMELD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Meld je aan voor kraamzorg
@@ -161,7 +161,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/60">
-            Van borstvoedingsadvies tot praktische babyverzorging — waar je ook
+            Van borstvoedingsadvies tot praktische babyverzorging waar je ook
             woont in de regio, bel gerust voor een kennismaking.
           </p>
         </div>
