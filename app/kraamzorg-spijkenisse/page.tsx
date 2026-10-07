@@ -2,93 +2,139 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 
+const pageUrl = "https://cindyskraamzorg.nl/kraamzorg-spijkenisse";
+
 export const metadata: Metadata = {
-  title: "Kraamzorg Spijkenisse | Erkende kraamverzorging op de groene eilanden",
+  title: "Kraamzorg Spijkenisse | Persoonlijke kraamzorg van Cindy",
   description:
-    "Kraamzorg in Spijkenisse van Cindy: 22 jaar ervaring, erkend door KCKZ. Persoonlijk zorgplan, borstvoedingsadvies en praktische hulp aan huis. Vraag aan!",
-  alternates: { canonical: "https://cindyskraamzorg.nl/kraamzorg-spijkenisse" },
+    "Persoonlijke kraamzorg in Spijkenisse van Cindy. 22 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin. Vraag kraamzorg aan.",
+  alternates: {
+    canonical: pageUrl,
+  },
 };
 
 const punten = [
-    "Alle wijken van Spijkenisse en de groene eilanden",
-    "Direct beschikbaar na poliklinische bevalling in het Maasstad",
-    "Flexibele tijden door het zelfstandig werken",
-    "Persoonlijk zorgplan, samen opgesteld in overleg",
-  ];
+  "Kraamzorg in alle wijken van Spijkenisse",
+  "Ook begeleiding rondom een poliklinische bevalling in Rotterdam",
+  "Flexibele zorg afgestemd op jullie dagritme",
+  "Persoonlijk zorgplan, afgestemd op jullie wensen",
+];
 
 const faqs = [
-    {
-      q: "Werk je in alle wijken van Spijkenisse?",
-      a: "Ja, ik werk in heel Spijkenisse: centrum, groene eilanden en alle omliggende wijken.",
-    },
-    {
-      q: "Hoe zit het met parkeren in de nieuwbouwwijken?",
-      a: "Geen issue — ik plan mijn aanrijtijd ruim en ben gewend aan elke wijk, dus ik ben op tijd bij je.",
-    },
-    {
-      q: "Kan ik avonduren inplannen voor de kraamzorg?",
-      a: "Ja, flexibiliteit is juist het voordeel van een zelfstandige kraamverzorgende. We stemmen het zorgplan af op jullie dagritme.",
-    },
-    {
-      q: "Hoe snel na de bevalling kan de zorg starten?",
-      a: "Direct. Bel of app me zodra de baby er is — ook 's nachts — en ik kom zo snel mogelijk naar je toe.",
-    },
-  ];
+  {
+    q: "Werk je in alle wijken van Spijkenisse?",
+    a: "Ja, ik bied kraamzorg in heel Spijkenisse en de omliggende wijken. Samen bespreken we vooraf jullie wensen, zodat de zorg goed aansluit bij jullie gezin.",
+  },
+  {
+    q: "Kun je kraamzorg bieden na een bevalling in het Maasstad Ziekenhuis?",
+    a: "Ja. Het Maasstad Ziekenhuis bevindt zich in Rotterdam en biedt ook mogelijkheden voor een poliklinische bevalling. Wanneer jullie na de bevalling naar huis gaan, kan ik de kraamzorg thuis in Spijkenisse verzorgen.",
+  },
+  {
+    q: "Kan de kraamzorg flexibel worden afgestemd?",
+    a: "Ja. Als zelfstandig kraamverzorgende kan ik de zorg persoonlijk afstemmen op jullie situatie, wensen en dagritme. We bespreken samen wat jullie tijdens de kraamperiode nodig hebben.",
+  },
+  {
+    q: "Hoe snel kan de kraamzorg na de bevalling starten?",
+    a: "Neem na de bevalling zo snel mogelijk telefonisch of via WhatsApp contact met mij op. Ook 's nachts kun je mij bereiken. Vervolgens stem ik zo snel mogelijk met jullie af wanneer de kraamzorg kan starten.",
+  },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  name: "Kraamzorg in Spijkenisse",
-  url: "https://cindyskraamzorg.nl/kraamzorg-spijkenisse",
-  about: {
-    "@type": "MedicalBusiness",
-    name: "Cindy's Kraamzorg",
-    telephone: "+31610890534",
-    areaServed: { "@type": "City", name: "Spijkenisse" },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Struytse Hoeck 106",
-      postalCode: "3224 HB",
-      addressLocality: "Hellevoetsluis",
-      addressCountry: "NL",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: "Kraamzorg in Spijkenisse",
+      description:
+        "Persoonlijke kraamzorg in Spijkenisse van Cindy, met deskundige begeleiding en praktische ondersteuning tijdens de kraamtijd.",
+      about: {
+        "@id": `${pageUrl}#business`,
+      },
+      breadcrumb: {
+        "@id": `${pageUrl}#breadcrumb`,
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://cindyskraamzorg.nl/" },
-      { "@type": "ListItem", position: 2, name: "Kraamzorg Spijkenisse", item: "https://cindyskraamzorg.nl/kraamzorg-spijkenisse" },
-    ],
-  },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${pageUrl}#business`,
+      name: "Cindy's Kraamzorg",
+      telephone: "+31610890534",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Struytse Hoeck 106",
+        postalCode: "3224 HB",
+        addressLocality: "Hellevoetsluis",
+        addressCountry: "NL",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Spijkenisse",
+      },
+      serviceType: "Kraamzorg",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://cindyskraamzorg.nl/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Kraamzorg Spijkenisse",
+          item: pageUrl,
+        },
+      ],
+    },
+  ],
 };
 
 export default function Page() {
   return (
     <>
+      {/* Structured data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
       />
 
       {/* Hero */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
         <Image
           src="/images/hero-spijkenisse.jpg"
-          alt="Kraamverzorgende Cindy met pasgeboren baby en peuter — kraamzorg in Spijkenisse"
+          alt="Kraamverzorgende Cindy met een pasgeboren baby en peuter"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand" />
+
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand"
+          aria-hidden="true"
+        />
+
         <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Werkgebied</p>
+          <p className="eyebrow mb-3 !text-blush">
+            Werkgebied
+          </p>
+
           <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
             Kraamzorg in Spijkenisse
           </h1>
+
           <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Op de groene eilanden begint het ouderschap het liefst zorgeloos. Persoonlijke kraamzorg van Cindy, afgestemd op jouw gezin.
+            Persoonlijke kraamzorg in Spijkenisse, met aandacht, rust en
+            deskundige begeleiding voor een fijne start van jullie gezin.
           </p>
         </div>
       </section>
@@ -97,46 +143,80 @@ export default function Page() {
       <section className="py-20 sm:py-24">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="eyebrow mb-3">Kraamzorg in Spijkenisse</p>
+            <p className="eyebrow mb-3">
+              Kraamzorg in Spijkenisse
+            </p>
+
             <h2 className="h-serif text-3xl sm:text-4xl">
-              Kraamzorg op de groene eilanden
+              Persoonlijke kraamzorg voor gezinnen in Spijkenisse
             </h2>
-            <div className="divider-leaf mt-6 mb-6">✦</div>
+
+            <div
+              className="divider-leaf mb-6 mt-6"
+              aria-hidden="true"
+            >
+              ✦
+            </div>
+
             <div className="space-y-4 leading-relaxed">
               <p>
-                Spijkenisse groeit: jonge gezinnen, nieuwbouwwijken en de
-                gezellige terrassen aan de Oude Maas. Voor wie hier woont, is
-                het fijn om na de bevalling in het Maasstad Ziekenhuis direct
-                thuis verder te kunnen met professionele ondersteuning.
+                Ben je op zoek naar professionele en persoonlijke kraamzorg
+                in Spijkenisse? Dan ben je bij Cindy&apos;s Kraamzorg aan het
+                juiste adres. Tijdens de kraamtijd bied ik deskundige
+                begeleiding, praktische ondersteuning en persoonlijke
+                aandacht, zodat jullie met vertrouwen kunnen genieten van
+                de eerste dagen met jullie baby.
               </p>
+
               <p>
-                Ik werk in alle wijken van Spijkenisse — van het centrum tot
-                de groene eilanden. Na een poliklinische bevalling sta ik klaar
-                zodra je thuiskomt, met alles wat jij en je baby nodig hebben.
+                Als zelfstandig kraamverzorgende bied ik kraamzorg aan
+                gezinnen in heel Spijkenisse. Ik neem de tijd om jullie
+                wensen te leren kennen en stem mijn begeleiding af op wat
+                jullie als gezin nodig hebben. Zo creëren we samen een
+                rustige en fijne start voor ouders en kind.
               </p>
+
               <p>
-                Omdat ik als zelfstandige werk, ben ik flexibel in tijden en
-                taken. Avonduren, extra borstvoedingsondersteuning of hulp bij
-                het ritme van je baby: alles is bespreekbaar in jullie
-                persoonlijke zorgplan.
+                Of je nu voor het eerst ouder wordt of al ervaring hebt,
+                met persoonlijke kraamzorg in Spijkenisse kunnen jullie
+                rekenen op betrokken ondersteuning, deskundig advies en een
+                vertrouwd gezicht tijdens een bijzondere periode.
               </p>
             </div>
+
             <ul className="mt-8 space-y-4">
-              {punten.map((p) => (
-                <li key={p} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-terracotta/15 text-sm text-terracotta">✦</span>
-                  <span className="text-ink/80">{p}</span>
+              {punten.map((punt) => (
+                <li
+                  key={punt}
+                  className="flex items-start gap-3"
+                >
+                  <span
+                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-terracotta/15 text-sm text-terracotta"
+                    aria-hidden="true"
+                  >
+                    ✦
+                  </span>
+
+                  <span className="text-ink/80">
+                    {punt}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
+
           <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-blush/40" aria-hidden="true" />
+            <div
+              className="absolute -inset-3 rounded-[2rem] bg-blush/40"
+              aria-hidden="true"
+            />
+
             <Image
               src="/images/cindy-baby-giraf.jpg"
-              alt="Cindy met een pasgeboren baby in een babykamer in Spijkenisse"
+              alt="Cindy met een pasgeboren baby"
               width={900}
               height={1200}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="relative rounded-[2rem] object-cover shadow-soft"
             />
           </div>
@@ -147,32 +227,46 @@ export default function Page() {
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
-            <p className="eyebrow mb-3">Goed om te weten</p>
+            <p className="eyebrow mb-3">
+              Goed om te weten
+            </p>
+
             <h2 className="h-serif text-3xl sm:text-4xl">
               Veelgestelde vragen over kraamzorg in Spijkenisse
             </h2>
           </div>
+
           <div className="mt-10 space-y-4">
-            {faqs.map((f) => (
+            {faqs.map((faq) => (
               <details
-                key={f.q}
+                key={faq.q}
                 className="group rounded-2xl bg-white p-6 shadow-card open:shadow-soft"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-lg text-espresso [&::-webkit-details-marker]:hidden">
-                  {f.q}
-                  <span className="text-terracotta transition-transform duration-300 group-open:rotate-45">+</span>
+                  <span>{faq.q}</span>
+
+                  <span
+                    className="text-terracotta transition-transform duration-300 group-open:rotate-45"
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
                 </summary>
-                <p className="mt-4 leading-relaxed text-ink/70">{f.a}</p>
+
+                <p className="mt-4 leading-relaxed text-ink/70">
+                  {faq.a}
+                </p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <CtaBand
         eyebrow="Woon je in Spijkenisse?"
         title="Vraag vandaag nog persoonlijke kraamzorg aan"
-        description="Bel, app of meld je online aan — Cindy staat voor je klaar op de groene eilanden."
+        description="Wil je kraamzorg in Spijkenisse aanvragen? Neem telefonisch of via WhatsApp contact op met Cindy en bespreek jullie wensen."
       />
     </>
   );
