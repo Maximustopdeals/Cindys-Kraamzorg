@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const punten = [
-    "Werkzaam in heel de gemeente Brielle, van centrum tot Vierpolders",
+    "Werkzaam in heel de gemeente Brielle.",
     "Kennismaking vóór de bevalling, zodat je vertrouwd bent",
     "Begeleiding bij borstvoeding en babyverzorging",
     "Praktische hulp in huis: koken, wassen en opruimen",
@@ -110,8 +110,7 @@ export default function Page() {
                 eerste week met je baby zorgeloos kunnen doorbrengen.
               </p>
               <p>
-                Als kraamverzorgende kom ik graag naar Brielle. Van Vierpolders
-                tot Zwartewaal: waar je ook woont in de gemeente, ik stem de
+                Als kraamverzorgende kom ik graag naar Brielle. Ik stem de
                 zorg volledig af op jullie situatie — in het oude centrum, in
                 een nieuwbouwwijk of juist landelijk aan de rand van de polders.
               </p>
