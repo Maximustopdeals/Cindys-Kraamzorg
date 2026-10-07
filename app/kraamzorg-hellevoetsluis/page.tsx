@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const punten = [
-    "Snel ter plaatse in heel Hellevoetsluis en Nieuwenhoorn",
+    "Snel ter plaatse in heel Hellevoetsluis",
     "Korte lijnen met verloskundigen uit de regio",
     "Thuisbevalling of poliklinisch: ik ben er zodra je baby er is",
     "Erkend door KCKZ en volledig vergoed uit het basispakket",
@@ -19,7 +19,7 @@ const punten = [
 const faqs = [
     {
       q: "Hoe snel ben je bij mij in Hellevoetsluis?",
-      a: "Omdat ik zelf in Hellevoetsluis woon, ben ik doorgaans binnen 15 tot 30 minuten bij je aan huis — ook 's nachts als dat nodig is.",
+      a: "Omdat ik zelf in Hellevoetsluis woon, ben ik doorgaans binnen 15 tot 30 minuten bij je aan huis ook 's nachts als dat nodig is.",
     },
     {
       q: "Begeleid je ook thuisbevallingen in Hellevoetsluis?",
@@ -31,7 +31,7 @@ const faqs = [
     },
     {
       q: "Hoe vraag ik kraamzorg aan in Hellevoetsluis?",
-      a: "Via het aanmeldformulier op deze website, telefonisch op 06-10890534 of per e-mail. Bij voorkeur meld je je vóór week 16 van je zwangerschap aan.",
+      a: "Via het aanmeldformulier op deze website, telefonisch op 06-10890534 of per e-mail. Bij voorkeur zodra je weet dat je zwanger bent, zo ben je verzekerd van een plek wanneer je die nodig hebt.",
     },
   ];
 
