@@ -3,14 +3,14 @@ import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 
 export const metadata: Metadata = {
-  title: "Kraamzorg Oostvoorne | Liefdevolle kraamzorg aan huis op Flakkee",
+  title: "Kraamzorg Oostvoorne | Liefdevolle kraamzorg aan huis.",
   description:
     "Kraamzorg in Oostvoorne en omgeving door Cindy: persoonlijke begeleiding, borstvoedingsadvies en huishoudelijke hulp. Erkend door KCKZ. Vraag aan via het formulier.",
   alternates: { canonical: "https://cindyskraamzorg.nl/kraamzorg-oostvoorne" },
 };
 
 const punten = [
-    "Ook bereikbaar voor Rockanje, Tinte en het buitengebied",
+    "Ook bereikbaar voor Rockanje.",
     "Eén vaste kraamverzorgende — geen wisselende gezichten",
     "Naadloze overdracht na ziekenhuis- of thuisbevalling",
     "Begeleiding van partner en oudere kinderen inbegrepen",
@@ -18,8 +18,8 @@ const punten = [
 
 const faqs = [
     {
-      q: "Bedien je ook Rockanje en Tinte?",
-      a: "Ja, naast Oostvoorne werk ik ook in Rockanje, Tinte en omliggende kernen op de Voorne-Polder.",
+      q: "Bedien je ook Rockanje?",
+      a: "Ja, naast Oostvoorne werk ik ook in Rockanje, en omliggende gebieden.",
     },
     {
       q: "Wat als ik in Spijkenisse of Rotterdam beval?",
@@ -27,11 +27,11 @@ const faqs = [
     },
     {
       q: "Hulp bij oudere kinderen tijdens de kraamweek?",
-      a: "Zeker — ook je peuter of kleuter wordt met liefde betrokken. Van een leuk ontbijt tot een verhaaltje, zodat jij kunt rusten met de baby.",
+      a: "Zeker, ook je peuter of kleuter wordt met liefde betrokken. Van een leuk ontbijt tot een verhaaltje, zodat jij kunt rusten met de baby.",
     },
     {
       q: "Hoe kan ik mij aanmelden voor kraamzorg in Oostvoorne?",
-      a: "Via het aanmeldformulier, telefonisch op 06-10890534 of per e-mail op info@cindyskraamzorg.nl. Meld je bij voorkeur vóór week 16 aan.",
+      a: "Via het contactformulier, telefonisch op 06-10890534 of per e-mail op info@cindyskraamzorg.nl. Meld je bij voorkeur vóór week 16 aan.",
     },
   ];
 
@@ -88,7 +88,7 @@ export default function Page() {
             Kraamzorg in Oostvoorne
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Rust, ruimte en persoonlijke aandacht — precies wat je nodig hebt in de eerste week met je baby in Oostvoorne.
+            Rust, ruimte en persoonlijke aandacht, precies wat je nodig hebt in de eerste week met je baby in Oostvoorne.
           </p>
         </div>
       </section>
@@ -99,22 +99,15 @@ export default function Page() {
           <div>
             <p className="eyebrow mb-3">Kraamzorg in Oostvoorne</p>
             <h2 className="h-serif text-3xl sm:text-4xl">
-              Kraamzorg in het groene hart van Flakkee
+              Persoonlijke kraamzorg in het groene en rustige Oostvoorne
             </h2>
             <div className="divider-leaf mt-6 mb-6">✦</div>
             <div className="space-y-4 leading-relaxed">
               <p>
-                Oostvoorne ligt lekker landelijk: tussen de duinen, de
-                Middelduinen en het oude kerkdorp. Een plek waar ruimte en rust
-                centraal staan — en dat is precies de sfeer waarin je de eerste
-                week met je baby wilt doorbrengen.
+                In Oostvoorne vind je de rust en ruimte die zo fijn zijn tijdens de kraamtijd. Terwijl jullie wennen aan het nieuwe gezinsleven, ondersteunen wij jullie met persoonlijke en betrokken kraamzorg.
               </p>
               <p>
-                Vanuit Hellevoetsluis rijd ik zo naar Oostvoorne via de N57.
-                Ook voor gezinnen in Rockanje, Tinte en het buitengebied ben ik
-                beschikbaar. Juist in deze dorpen is persoonlijke aandacht
-                waardevol: je krijgt bij mij geen wisselende gezichten, maar
-                één vaste kraamverzorgende die jullie gezin kent.
+                Vanuit Hellevoetsluis ben ik snel in Oostvoorne en de omliggende dorpen. Ook gezinnen in Rockanje, Tinte en het buitengebied kunnen rekenen op persoonlijke en betrokken kraamzorg. Ik neem de tijd om jullie gezin echt te leren kennen, zodat jullie tijdens de kraamweek kunnen vertrouwen op begeleiding die past bij jullie wensen en behoeften.
               </p>
               <p>
                 Of je nu bevalt in het ziekenhuis in Spijkenisse of Rotterdam,
