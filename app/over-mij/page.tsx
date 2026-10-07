@@ -42,7 +42,7 @@ export default function OverMijPage() {
             Cindy Koppenaal Steeg
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Kraamverzorgende uit Hellevoetsluis — al ruim 22 jaar met hart en
+            Kraamverzorgende uit Hellevoetsluis. Al 22+ jaar met hart en
             ziel verbonden aan het mooiste vak ter wereld.
           </p>
         </div>
@@ -67,11 +67,9 @@ export default function OverMijPage() {
                 geweest om kraamzorg te mogen bieden aan al mijn kleinkinderen.
               </p>
               <p>
-                <strong>Sinds 2003</strong> werk ik als kraamverzorgster. Met liefde heb ik
-                de afgelopen 22 jaar talloze gezinnen mogen verzorgen en ik kijk
-                ernaar uit om dit nog vele jaren te blijven doen. Door regelmatige
-                bijscholing en diverse certificaten — waaronder mijn
-                <strong> EHBO-diploma</strong> — blijf ik mijn kennis en vaardigheden
+                <strong>Sinds 2003</strong> werk ik als kraamverzorgster. Al ruim 22 jaar mag ik gezinnen begeleiden tijdens een van de meest bijzondere periodes in hun leven. Het is een voorrecht om ouders en baby's een fijne start te geven, en dat doe ik nog iedere dag met evenveel liefde en toewijding. Door regelmatige
+                bijscholing en diverse certificaten waaronder mijn
+                <strong> EHBO-diploma</strong> blijf ik mijn kennis en vaardigheden
                 voortdurend uitbreiden.
               </p>
               <p>
@@ -128,7 +126,7 @@ export default function OverMijPage() {
             Mijn hobby's zijn wandelen en fietsen, maar mijn grootste vreugde
             komt voort uit het bieden van een rustgevende en gezellige
             kraamweek voor jou en je gezin. Bij mij staat jouw welzijn en dat
-            van je kindje voorop — maar ook oudere kinderen en je partner
+            van je kindje voorop maar ook oudere kinderen en je partner
             worden met liefde verzorgd en ondersteund. Ik neem diverse
             huishoudelijke taken op me, zodat jij je kunt concentreren op het
             genieten van deze bijzondere tijd.
