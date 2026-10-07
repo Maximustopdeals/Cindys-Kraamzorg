@@ -5,11 +5,46 @@ import CtaBand from "@/components/CtaBand";
 const pageUrl = "https://cindyskraamzorg.nl/kraamzorg-oostvoorne";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cindyskraamzorg.nl"),
   title: "Kraamzorg Oostvoorne | Persoonlijke kraamzorg van Cindy",
   description:
     "Persoonlijke kraamzorg in Oostvoorne van Cindy. 22 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin. Vraag kraamzorg aan.",
   alternates: {
-    canonical: pageUrl,
+    canonical: "/kraamzorg-oostvoorne",
+  },
+  openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    url: "/kraamzorg-oostvoorne",
+    siteName: "Cindy's Kraamzorg",
+    title: "Kraamzorg Oostvoorne | Persoonlijke kraamzorg van Cindy",
+    description:
+      "Persoonlijke kraamzorg in Oostvoorne van Cindy. 22 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin.",
+    images: [
+      {
+        url: "/images/og-oostvoorne.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kraamzorg in Oostvoorne — Cindy's Kraamzorg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kraamzorg Oostvoorne | Persoonlijke kraamzorg van Cindy",
+    description:
+      "Persoonlijke kraamzorg in Oostvoorne van Cindy. 22 jaar ervaring, erkend door KCKZ.",
+    images: ["/images/og-oostvoorne.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -53,6 +88,7 @@ const jsonLd = {
       name: "Kraamzorg in Oostvoorne",
       description:
         "Persoonlijke kraamzorg in Oostvoorne van Cindy, met deskundige begeleiding en praktische ondersteuning tijdens de kraamtijd.",
+      inLanguage: "nl-NL",
       about: {
         "@id": `${pageUrl}#business`,
       },
@@ -65,6 +101,7 @@ const jsonLd = {
       "@id": `${pageUrl}#business`,
       name: "Cindy's Kraamzorg",
       telephone: "+31610890534",
+      url: "https://cindyskraamzorg.nl/",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Struytse Hoeck 106",
@@ -73,18 +110,9 @@ const jsonLd = {
         addressCountry: "NL",
       },
       areaServed: [
-        {
-          "@type": "Place",
-          name: "Oostvoorne",
-        },
-        {
-          "@type": "Place",
-          name: "Rockanje",
-        },
-        {
-          "@type": "Place",
-          name: "Tinte",
-        },
+        { "@type": "Place", name: "Oostvoorne" },
+        { "@type": "Place", name: "Rockanje" },
+        { "@type": "Place", name: "Tinte" },
       ],
       serviceType: "Kraamzorg",
     },
@@ -106,6 +134,18 @@ const jsonLd = {
         },
       ],
     },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    },
   ],
 };
 
@@ -116,7 +156,7 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
 
@@ -124,11 +164,12 @@ export default function Page() {
       <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
         <Image
           src="/images/hero-oostvoorne.jpg"
-          alt="Cindy met een pasgeboren baby"
+          alt="Cindy met een pasgeboren baby — kraamzorg in Oostvoorne"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
+          quality={85}
           className="object-cover"
         />
 
@@ -138,9 +179,7 @@ export default function Page() {
         />
 
         <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">
-            Werkgebied
-          </p>
+          <p className="eyebrow mb-3 !text-blush">Werkgebied</p>
 
           <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
             Kraamzorg in Oostvoorne
@@ -158,25 +197,20 @@ export default function Page() {
       <section className="py-20 sm:py-24">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="eyebrow mb-3">
-              Kraamzorg in Oostvoorne
-            </p>
+            <p className="eyebrow mb-3">Kraamzorg in Oostvoorne</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
               Persoonlijke kraamzorg in Oostvoorne
             </h2>
 
-            <div
-              className="divider-leaf mb-6 mt-6"
-              aria-hidden="true"
-            >
+            <div className="divider-leaf mb-6 mt-6" aria-hidden="true">
               ✦
             </div>
 
             <div className="space-y-4 leading-relaxed">
               <p>
-                Ben je op zoek naar persoonlijke kraamzorg in Oostvoorne?
-                Dan wil je vooral kunnen vertrouwen op iemand die rustig,
+                Ben je op zoek naar persoonlijke kraamzorg in Oostvoorne? Dan
+                wil je vooral kunnen vertrouwen op iemand die rustig,
                 deskundig en betrokken is. Tijdens de kraamtijd ondersteun ik
                 jullie bij de verzorging van jullie baby en help ik jullie om
                 samen jullie draai te vinden als gezin.
@@ -191,29 +225,25 @@ export default function Page() {
               </p>
 
               <p>
-                Of je nu thuis bevalt of na een ziekenhuisbevalling naar
-                huis gaat, ik zorg voor een rustige overgang naar de
-                kraamperiode thuis. Het Maasstad Ziekenhuis in Rotterdam
-                biedt bijvoorbeeld de mogelijkheid om zonder medische
-                indicatie te bevallen met de eigen verloskundige en een
-                persoonlijke kraamverzorgende. Wanneer jullie daarna naar
-                huis mogen, kan de kraamzorg thuis in Oostvoorne worden
-                voortgezet.
+                Of je nu thuis bevalt of na een ziekenhuisbevalling naar huis
+                gaat, ik zorg voor een rustige overgang naar de kraamperiode
+                thuis. Het Maasstad Ziekenhuis in Rotterdam biedt bijvoorbeeld
+                de mogelijkheid om zonder medische indicatie te bevallen met
+                de eigen verloskundige en een persoonlijke kraamverzorgende.
+                Wanneer jullie daarna naar huis mogen, kan de kraamzorg thuis
+                in Oostvoorne worden voortgezet.
               </p>
 
               <p>
                 Voor de bevalling maken we graag kennis. Zo weet je wie er
-                straks bij jullie thuis komt en kunnen we vooraf bespreken
-                wat jullie belangrijk vinden tijdens de kraamperiode.
+                straks bij jullie thuis komt en kunnen we vooraf bespreken wat
+                jullie belangrijk vinden tijdens de kraamperiode.
               </p>
             </div>
 
             <ul className="mt-8 space-y-4">
               {punten.map((punt) => (
-                <li
-                  key={punt}
-                  className="flex items-start gap-3"
-                >
+                <li key={punt} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-terracotta/15 text-sm text-terracotta"
                     aria-hidden="true"
@@ -221,9 +251,7 @@ export default function Page() {
                     ✦
                   </span>
 
-                  <span className="text-ink/80">
-                    {punt}
-                  </span>
+                  <span className="text-ink/80">{punt}</span>
                 </li>
               ))}
             </ul>
@@ -237,10 +265,11 @@ export default function Page() {
 
             <Image
               src="/images/cindy-kinderen-2.jpg"
-              alt="Cindy met een pasgeboren baby tijdens een kraamweek"
+              alt="Cindy met een pasgeboren baby tijdens een kraamweek in Oostvoorne"
               width={900}
               height={1200}
               sizes="(min-width: 1024px) 50vw, 100vw"
+              quality={85}
               className="relative rounded-[2rem] object-cover shadow-soft"
             />
           </div>
@@ -251,9 +280,7 @@ export default function Page() {
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
-            <p className="eyebrow mb-3">
-              Goed om te weten
-            </p>
+            <p className="eyebrow mb-3">Goed om te weten</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
               Veelgestelde vragen over kraamzorg in Oostvoorne
@@ -266,8 +293,10 @@ export default function Page() {
                 key={faq.q}
                 className="group rounded-2xl bg-white p-6 shadow-card open:shadow-soft"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-lg text-espresso [&::-webkit-details-marker]:hidden">
-                  <span>{faq.q}</span>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                  <h3 className="font-serif text-lg text-espresso">
+                    {faq.q}
+                  </h3>
 
                   <span
                     className="text-terracotta transition-transform duration-300 group-open:rotate-45"
@@ -277,9 +306,7 @@ export default function Page() {
                   </span>
                 </summary>
 
-                <p className="mt-4 leading-relaxed text-ink/70">
-                  {faq.a}
-                </p>
+                <p className="mt-4 leading-relaxed text-ink/70">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -295,4 +322,3 @@ export default function Page() {
     </>
   );
 }
-```
