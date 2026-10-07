@@ -2,93 +2,149 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 
+const pageUrl = "https://cindyskraamzorg.nl/kraamzorg-brielle";
+
 export const metadata: Metadata = {
-  title: "Kraamzorg Brielle | Persoonlijke kraamverzorging in de vestingstad",
+  title: "Kraamzorg Brielle | Persoonlijke kraamzorg van Cindy",
   description:
-    "Op zoek naar kraamzorg in Brielle? Cindy verzorgt moeder en baby met ruim 22 jaar ervaring. Erkend door KCKZ, volledig vergoed. Vraag vrijblijvend aan.",
-  alternates: { canonical: "https://cindyskraamzorg.nl/kraamzorg-brielle" },
+    "Persoonlijke kraamzorg in Brielle van Cindy. 22 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin. Vraag kraamzorg aan.",
+  alternates: {
+    canonical: pageUrl,
+  },
 };
 
 const punten = [
-    "Werkzaam in heel de gemeente Brielle.",
-    "Kennismaking vóór de bevalling, zodat je vertrouwd bent",
-    "Begeleiding bij borstvoeding en babyverzorging",
-    "Praktische hulp in huis: koken, wassen en opruimen",
-  ];
+  "Kraamzorg in Brielle en omgeving",
+  "Ook begeleiding rondom een poliklinische bevalling in Rotterdam",
+  "Flexibele zorg afgestemd op jullie dagritme",
+  "Persoonlijk zorgplan, afgestemd op jullie wensen",
+];
 
 const faqs = [
-    {
-      q: "Kom je ook in Vierpolders en Zwartewaal?",
-      a: "Ja, ik werk in de hele gemeente Brielle, dus ook in Vierpolders, Zwartewaal en de omliggende kernen.",
-    },
-    {
-      q: "Hoe lang duurt de kraamweek?",
-      a: "Dat hangt af van je indicatie. Vaak is de zorg 8 uur per dag verdeeld over ongeveer een week, afgestemd op jullie wensen.",
-    },
-    {
-      q: "Kan ik vooraf kennismaken?",
-      a: "Zeker, dat vind ik zelfs prettig. Tijdens een vrijblijvend gesprek bespreken we jullie wensen en stellen we samen het zorgplan op.",
-    },
-    {
-      q: "Wat als mijn baby eerder komt dan gepland?",
-      a: "Geen probleem — bel me direct en ik schakel zo snel mogelijk. Flexibiliteit is juist het voordeel van een zelfstandige kraamverzorgende.",
-    },
-  ];
+  {
+    q: "Bied je ook kraamzorg in Vierpolders en Zwartewaal?",
+    a: "Ja, ik bied kraamzorg in Brielle en de omliggende plaatsen, waaronder Vierpolders en Zwartewaal. Vooraf bespreken we jullie wensen en de praktische afspraken rondom de kraamzorg.",
+  },
+  {
+    q: "Kun je kraamzorg bieden na een bevalling in het Maasstad Ziekenhuis?",
+    a: "Ja. Het Maasstad Ziekenhuis staat in Rotterdam en is er ook voor aanstaande ouders uit de omgeving. Na een ziekenhuisbevalling kan de kraamzorg, wanneer jullie naar huis mogen, bij jullie thuis in Brielle worden voortgezet.",
+  },
+  {
+    q: "Kan ik vooraf kennismaken met Cindy?",
+    a: "Zeker. Ik vind het prettig om vooraf kennis te maken. Tijdens een persoonlijk gesprek bespreken we jullie wensen, de kraamperiode en wat jullie van mij kunnen verwachten.",
+  },
+  {
+    q: "Wat als mijn baby eerder komt dan verwacht?",
+    a: "Neem na de bevalling zo snel mogelijk telefonisch of via WhatsApp contact met mij op. Ook wanneer de bevalling eerder begint dan verwacht, bespreken we zo snel mogelijk wanneer de kraamzorg bij jullie thuis kan starten.",
+  },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  name: "Kraamzorg in Brielle",
-  url: "https://cindyskraamzorg.nl/kraamzorg-brielle",
-  about: {
-    "@type": "MedicalBusiness",
-    name: "Cindy's Kraamzorg",
-    telephone: "+31610890534",
-    areaServed: { "@type": "City", name: "Brielle" },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Struytse Hoeck 106",
-      postalCode: "3224 HB",
-      addressLocality: "Hellevoetsluis",
-      addressCountry: "NL",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: "Kraamzorg in Brielle",
+      description:
+        "Persoonlijke kraamzorg in Brielle van Cindy, met deskundige begeleiding en praktische ondersteuning tijdens de kraamtijd.",
+      about: {
+        "@id": `${pageUrl}#business`,
+      },
+      breadcrumb: {
+        "@id": `${pageUrl}#breadcrumb`,
+      },
     },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://cindyskraamzorg.nl/" },
-      { "@type": "ListItem", position: 2, name: "Kraamzorg Brielle", item: "https://cindyskraamzorg.nl/kraamzorg-brielle" },
-    ],
-  },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${pageUrl}#business`,
+      name: "Cindy's Kraamzorg",
+      telephone: "+31610890534",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Struytse Hoeck 106",
+        postalCode: "3224 HB",
+        addressLocality: "Hellevoetsluis",
+        addressCountry: "NL",
+      },
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Brielle",
+        },
+        {
+          "@type": "Place",
+          name: "Vierpolders",
+        },
+        {
+          "@type": "Place",
+          name: "Zwartewaal",
+        },
+      ],
+      serviceType: "Kraamzorg",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://cindyskraamzorg.nl/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Kraamzorg Brielle",
+          item: pageUrl,
+        },
+      ],
+    },
+  ],
 };
 
 export default function Page() {
   return (
     <>
+      {/* Structured data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
       />
 
       {/* Hero */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
         <Image
           src="/images/hero-brielle.jpg"
-          alt="Vrolijke baby — kraamzorg in Brielle"
+          alt="Kraamverzorgende Cindy met een pasgeboren baby"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand" />
+
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand"
+          aria-hidden="true"
+        />
+
         <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Werkgebied</p>
+          <p className="eyebrow mb-3 !text-blush">
+            Werkgebied
+          </p>
+
           <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
             Kraamzorg in Brielle
           </h1>
+
           <p className="mt-4 max-w-2xl text-lg text-white/90">
-            In de mooiste vestingstad van Zuid-Holland verdien je een rustige start. Persoonlijke kraamzorg van Cindy, erkend door KCKZ.
+            Persoonlijke kraamzorg in Brielle, met aandacht, rust en
+            deskundige begeleiding voor een fijne start van jullie gezin.
           </p>
         </div>
       </section>
@@ -97,45 +153,82 @@ export default function Page() {
       <section className="py-20 sm:py-24">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="eyebrow mb-3">Kraamzorg in Brielle</p>
+            <p className="eyebrow mb-3">
+              Kraamzorg in Brielle
+            </p>
+
             <h2 className="h-serif text-3xl sm:text-4xl">
-              Kraamzorg in de vestingstad Brielle
+              Persoonlijke kraamzorg voor gezinnen in Brielle
             </h2>
-            <div className="divider-leaf mt-6 mb-6">✦</div>
+
+            <div
+              className="divider-leaf mb-6 mt-6"
+              aria-hidden="true"
+            >
+              ✦
+            </div>
+
             <div className="space-y-4 leading-relaxed">
               <p>
-                Brielle is een stad met karakter: de historische vestingwallen,
-                het Marktveld en gezinnen die genieten van het water aan de
-                Brielse Maas. Precies in zo'n bijzondere omgeving wil je de
-                eerste week met je baby zorgeloos kunnen doorbrengen.
+                Ben je op zoek naar professionele en persoonlijke kraamzorg
+                in Brielle? Dan ben je bij Cindy&apos;s Kraamzorg aan het
+                juiste adres. Tijdens de kraamtijd bied ik deskundige
+                begeleiding, praktische ondersteuning en persoonlijke
+                aandacht, zodat jullie met vertrouwen kunnen genieten van
+                de eerste dagen met jullie baby.
               </p>
+
               <p>
-                Als kraamverzorgende kom ik graag naar Brielle. Ik stem de
-                zorg volledig af op jullie situatie — in het oude centrum, in
-                een nieuwbouwwijk of juist landelijk aan de rand van de polders.
+                Als zelfstandig kraamverzorgende kom ik bij gezinnen thuis
+                in Brielle en omgeving. Ik neem de tijd om jullie wensen te
+                leren kennen en stem mijn begeleiding af op wat jullie als
+                gezin nodig hebben. Zo zorgen we samen voor een rustige en
+                vertrouwde start na de geboorte.
               </p>
+
               <p>
-                Voor je bevalling plannen we een kennismakingsgesprek. Zo weet
-                je precies wie er na de geboorte bij je over de vloer komt en
-                wat je kunt verwachten.
+                Brielle heeft een eigen karakter en een mooie historische
+                omgeving. Voor de kraamzorg maakt het vooral verschil dat
+                jullie weten wie er bij jullie thuis komt. Daarom vind ik
+                een persoonlijke kennismaking vooraf belangrijk. Zo weten
+                jullie wat jullie van mij kunnen verwachten en kunnen we
+                de zorg goed voorbereiden.
               </p>
             </div>
+
             <ul className="mt-8 space-y-4">
-              {punten.map((p) => (
-                <li key={p} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-terracotta/15 text-sm text-terracotta">✦</span>
-                  <span className="text-ink/80">{p}</span>
+              {punten.map((punt) => (
+                <li
+                  key={punt}
+                  className="flex items-start gap-3"
+                >
+                  <span
+                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-terracotta/15 text-sm text-terracotta"
+                    aria-hidden="true"
+                  >
+                    ✦
+                  </span>
+
+                  <span className="text-ink/80">
+                    {punt}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
+
           <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-blush/40" aria-hidden="true" />
+            <div
+              className="absolute -inset-3 rounded-[2rem] bg-blush/40"
+              aria-hidden="true"
+            />
+
             <Image
-              src="/images/cindy-gezin.jpg"
-              alt="Cindy samen met een pasgeboren baby en peuter tijdens een kraamweek"
+              src="/images/cindy-baby-giraf.jpg"
+              alt="Cindy met een pasgeboren baby"
               width={900}
               height={1200}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="relative rounded-[2rem] object-cover shadow-soft"
             />
           </div>
@@ -146,32 +239,46 @@ export default function Page() {
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
-            <p className="eyebrow mb-3">Goed om te weten</p>
+            <p className="eyebrow mb-3">
+              Goed om te weten
+            </p>
+
             <h2 className="h-serif text-3xl sm:text-4xl">
               Veelgestelde vragen over kraamzorg in Brielle
             </h2>
           </div>
+
           <div className="mt-10 space-y-4">
-            {faqs.map((f) => (
+            {faqs.map((faq) => (
               <details
-                key={f.q}
+                key={faq.q}
                 className="group rounded-2xl bg-white p-6 shadow-card open:shadow-soft"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-lg text-espresso [&::-webkit-details-marker]:hidden">
-                  {f.q}
-                  <span className="text-terracotta transition-transform duration-300 group-open:rotate-45">+</span>
+                  <span>{faq.q}</span>
+
+                  <span
+                    className="text-terracotta transition-transform duration-300 group-open:rotate-45"
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
                 </summary>
-                <p className="mt-4 leading-relaxed text-ink/70">{f.a}</p>
+
+                <p className="mt-4 leading-relaxed text-ink/70">
+                  {faq.a}
+                </p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <CtaBand
         eyebrow="Woon je in Brielle?"
-        title="Plan een vrijblijvende kennismaking in de vestingstad"
-        description="Bel of app en ontdek hoe Cindy jullie eerste week als gezin rustig maakt."
+        title="Vraag vandaag nog persoonlijke kraamzorg aan"
+        description="Wil je kraamzorg in Brielle aanvragen? Neem telefonisch of via WhatsApp contact op met Cindy en bespreek jullie wensen."
       />
     </>
   );
