@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import FaqSection from "@/components/FaqSection";
 import CtaBand from "@/components/CtaBand";
@@ -61,7 +62,7 @@ export default function ContactPage() {
             <div className="divider-leaf mt-6 mb-6">✦</div>
             <div className="space-y-4 leading-relaxed">
               <p>
-                De kraamperiode kan een uitdagende tijd zijn zeker als je voor
+                De kraamperiode kan een uitdagende tijd zijn — zeker als je voor
                 het eerst ouders wordt. Daarom sta ik, <strong>Cindy</strong>, als ervaren
                 kraamverzorgende voor je klaar. Met persoonlijke aandacht help ik
                 je op weg in het ouderschap: praktisch én emotioneel.
@@ -143,18 +144,49 @@ export default function ContactPage() {
             <ContactForm />
           </div>
         </div>
+      </section>
 
-        {/* Kaart */}
-        <div className="container-site mt-16">
-          <div className="overflow-hidden rounded-[2rem] shadow-soft">
-            <Image
-              src="/images/kaart-hellevoetsluis.png"
-              alt="Kaart van het werkgebied van Cindy's Kraamzorg rond Hellevoetsluis, Brielle en Spijkenisse"
-              width={900}
-              height={627}
-              className="w-full object-cover"
-            />
+      {/* ============ WERKGEBIED — high-end ============ */}
+      <section className="bg-cream py-20 sm:py-24">
+        <div className="container-site">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow mb-3">Werkgebied</p>
+            <h2 className="h-serif text-3xl sm:text-4xl">
+              Persoonlijke kraamzorg in jouw regio
+            </h2>
+            <div className="divider-leaf mt-6 mb-6">✦</div>
+            <p className="leading-relaxed text-ink/70">
+              Ik kom bij je thuis in Hellevoetsluis, Brielle, Oostvoorne en
+              Spijkenisse. Kies jouw regio voor meer informatie.
+            </p>
           </div>
+
+          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Hellevoetsluis", href: "/kraamzorg-hellevoetsluis" },
+              { name: "Brielle", href: "/kraamzorg-brielle" },
+              { name: "Oostvoorne", href: "/kraamzorg-oostvoorne" },
+              { name: "Spijkenisse", href: "/kraamzorg-spijkenisse" },
+            ].map((r) => (
+              <Link
+                key={r.name}
+                href={r.href}
+                className="card-soft group flex items-center justify-between gap-3 transition-all hover:-translate-y-0.5 hover:!shadow-soft"
+              >
+                <span className="h-serif text-base text-espresso transition-colors group-hover:text-terracotta">
+                  {r.name}
+                </span>
+                <span className="text-sm text-terracotta transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/60">
+            Woon je niet in één van deze plaatsen? Neem gerust contact op voor
+            de mogelijkheden in jouw regio.
+          </p>
         </div>
       </section>
 
