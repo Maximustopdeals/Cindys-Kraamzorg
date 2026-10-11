@@ -1,4 +1,4 @@
-import type { Metadata } from "next"; 
+import type { Metadata } from "next";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import FaqSection from "@/components/FaqSection";
@@ -14,23 +14,38 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[55vh] items-end overflow-hidden pb-16 pt-40">
+      {/* ============ HERO — high-end ============ */}
+      <section className="relative flex min-h-[65vh] items-center overflow-hidden lg:min-h-[70vh]">
+        {/* Achtergrondfoto: Cindy met baby over schouder */}
         <Image
-          src="/images/baby-roze.jpg"
-          alt="Slapend pasgeboren baby'tje in roze omgeving"
+          src="/images/cindy-contact-hero.webp"
+          alt="Cindy van Cindy's Kraamzorg met pasgeboren baby — neem contact op"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[70%_center] lg:object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand" />
-        <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Contact</p>
-          <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
-            Neem de eerste stap naar een rustige kraamperiode
-          </h1>
+
+        {/* Luxe gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-sand/80 via-transparent to-transparent" />
+
+        <div className="container-site relative z-10 py-24 lg:py-32">
+          <div className="max-w-xl text-center sm:text-left">
+            <p className="eyebrow animate-fade-in mb-6 !text-blush">Contact</p>
+
+            <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl">
+              Neem de eerste stap naar een rustige kraamperiode
+            </h1>
+
+            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
+
+            <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
+              Bel, app of stuur een berichtje — ik denk graag met je mee en
+              sta voor je klaar.
+            </p>
+          </div>
         </div>
       </section>
 
