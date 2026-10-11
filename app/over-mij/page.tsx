@@ -24,45 +24,73 @@ const punten = [
 export default function OverMijPage() {
   return (
     <>
-      {/* ============ HERO — high-end ============ */}
-      <section className="relative flex min-h-[70vh] items-center overflow-hidden lg:min-h-[75vh]">
-        {/* Achtergrondfoto: Cindy met pasgeboren baby */}
-        <Image
-          src="/images/cindy-over-mij.webp"
-          alt="Cindy Koppenaal Steeg van Cindy's Kraamzorg met pasgeboren baby — kraamverzorgende in Hellevoetsluis"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover object-[70%_center] lg:object-right"
+      {/* ============ HERO — high-end & rustig ============ */}
+      <section className="relative overflow-hidden bg-cream pt-32 pb-20 sm:pt-40 sm:pb-24">
+        {/* Subtiel decoratief element */}
+        <div
+          className="pointer-events-none absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blush/30 blur-3xl"
+          aria-hidden="true"
         />
 
-        {/* Luxe gradient: donker links voor tekstleesbaarheid, transparant rechts */}
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/15" />
-        {/* Subtiele warme gloed onderaan */}
-        <div className="absolute inset-0 bg-gradient-to-t from-sand/80 via-transparent to-transparent" />
+        <div className="container-site relative">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Tekst links */}
+            <div className="order-2 text-center lg:order-1 lg:text-left">
+              {/* Badge */}
+              <p className="eyebrow mb-6">Over mij</p>
 
-        {/* Content container: links uitgelijnd op desktop */}
-        <div className="container-site relative z-10 py-24 lg:py-32">
-          <div className="max-w-xl text-center sm:text-left">
-            {/* Badge */}
-            <p className="eyebrow animate-fade-in mb-6 !text-blush">
-              Over mij
-            </p>
+              {/* H1 */}
+              <h1 className="h-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
+                Cindy Koppenaal Steeg
+              </h1>
 
-            {/* H1 */}
-            <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl">
-              Cindy Koppenaal Steeg
-            </h1>
+              {/* Sierlijn */}
+              <div className="my-8 flex items-center justify-center gap-4 lg:justify-start">
+                <span className="h-px w-16 bg-terracotta/40" />
+                <span className="text-terracotta">✦</span>
+                <span className="h-px w-16 bg-terracotta/40" />
+              </div>
 
-            {/* Sierlijn */}
-            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
+              {/* Subtitel */}
+              <p className="text-lg leading-relaxed text-ink/80 sm:text-xl">
+                Kraamverzorgende uit Hellevoetsluis. Al 22+ jaar met hart en
+                ziel verbonden aan het mooiste vak ter wereld.
+              </p>
+            </div>
 
-            {/* Paragraaf */}
-            <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
-              Kraamverzorgende uit Hellevoetsluis. Al 22+ jaar met hart en
-              ziel verbonden aan het mooiste vak ter wereld.
-            </p>
+            {/* Portret rechts — rond */}
+            <div className="relative order-1 mx-auto lg:order-2 lg:mx-0">
+              <div className="relative h-64 w-64 sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+                {/* Zachte gloed achter portret */}
+                <div
+                  className="absolute -inset-6 rounded-full bg-blush/50 blur-2xl"
+                  aria-hidden="true"
+                />
+
+                {/* Rond portret */}
+                <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white shadow-soft">
+                  <Image
+                    src="/images/cindy-over-mij-hero.webp"
+                    alt="Cindy Koppenaal Steeg van Cindy's Kraamzorg — kraamverzorgende in Hellevoetsluis"
+                    fill
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 1024px) 320px, 384px"
+                    className="object-cover object-[60%_center]"
+                  />
+                </div>
+
+                {/* Klein accent-element */}
+                <div className="absolute -bottom-4 -right-4 flex h-20 w-20 items-center justify-center rounded-full bg-terracotta text-white shadow-card">
+                  <div className="text-center leading-none">
+                    <span className="h-serif block text-2xl">22+</span>
+                    <span className="mt-1 block text-[10px] font-semibold uppercase tracking-widest">
+                      Jaar
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
