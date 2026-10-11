@@ -124,39 +124,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ FELICITATIE ============ */}
-      <section className="py-20 sm:py-28">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div className="animate-fade-up">
-            <p className="eyebrow mb-3">Een bijzondere tijd</p>
-            <h2 className="h-serif text-3xl sm:text-4xl">
+      {/* ============ FELICITATIE — high-end tekstsectie ============ */}
+      <section className="relative overflow-hidden py-24 sm:py-32">
+        {/* Subtiel decoratief element op de achtergrond */}
+        <div
+          className="pointer-events-none absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blush/30 blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="container-site relative">
+          <div className="mx-auto max-w-3xl text-center">
+            {/* Badge */}
+            <p className="eyebrow mb-4">Een bijzondere tijd</p>
+
+            {/* Sierlijn boven titel */}
+            <div className="mx-auto mb-8 flex items-center justify-center gap-4">
+              <span className="h-px w-16 bg-terracotta/40" />
+              <span className="text-terracotta">✦</span>
+              <span className="h-px w-16 bg-terracotta/40" />
+            </div>
+
+            {/* H2 */}
+            <h2 className="h-serif text-4xl leading-tight sm:text-5xl">
               Proficiat met je zwangerschap!
             </h2>
-            <div className="divider-leaf mt-6 mb-6">✦</div>
-            <p className="mb-4 leading-relaxed">
+
+            {/* Sierlijn onder titel */}
+            <div className="divider-leaf mx-auto my-8">✦</div>
+
+            {/* Paragraaf 1 — groter, sierlijk */}
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl">
               Een warme felicitatie met de prachtige spruit die groeit in jouw buik.
-              Het is een periode vol vreugde, maar ook met vragen en spanning. Bij
-              Cindy's Kraamzorg in <strong>Hellevoetsluis &amp; omliggende gebieden</strong> vind ik
-              het belangrijk dat je je gerust voelt.
+              Het is een periode vol vreugde, maar ook met vragen en spanning.
             </p>
-            <p className="mb-6 leading-relaxed">
-              Het is fijn om te weten dat de zorg rondom je bevalling goed is
-              geregeld. Ik sta klaar om je hierbij met <strong>vakmanschap en warmte</strong> te
-              begeleiden van de eerste dag tot een zorgeloze overdracht.
+
+            {/* Paragraaf 2 */}
+            <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-ink/70">
+              Bij Cindy&apos;s Kraamzorg in <strong>Hellevoetsluis &amp; omliggende gebieden</strong> vind ik
+              het belangrijk dat je je gerust voelt. Ik sta klaar om je met
+              <strong> vakmanschap en warmte</strong> te begeleiden — van de eerste dag
+              tot een zorgeloze overdracht.
             </p>
-            <a href={AANMELD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Meld je aan voor kraamzorg
-            </a>
-          </div>
-          <div className="relative animate-fade-up [animation-delay:150ms]">
-            <div className="absolute -inset-3 rounded-[2rem] bg-blush/40" aria-hidden="true" />
-            <Image
-              src="/images/cindy-baby.jpg"
-              alt="Kraamverzorgende Cindy met een pasgeboren baby op de arm"
-              width={600}
-              height={800}
-              className="relative rounded-[2rem] object-cover shadow-soft"
-            />
+
+            {/* CTA */}
+            <div className="mt-12">
+              <a
+                href={AANMELD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Meld je aan voor kraamzorg
+              </a>
+            </div>
+
+            {/* Subtiele ondertitel */}
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-ink/40">
+              Persoonlijk · Betrokken · Ervaren
+            </p>
           </div>
         </div>
       </section>
@@ -221,8 +246,8 @@ export default function Home() {
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
             <Image
-              src="/images/cindy-baby-giraf.jpg"
-              alt="Cindy samen met een pasgeboren baby in een warme huiselijke omgeving"
+              src="/images/cindy-aandacht.webp"
+              alt="Cindy van Cindy's Kraamzorg verzorgt een pasgeboren baby op de commode — persoonlijke kraamzorg aan huis"
               width={900}
               height={1200}
               className="rounded-[2rem] object-cover shadow-soft"
