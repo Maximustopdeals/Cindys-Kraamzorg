@@ -20,10 +20,18 @@ const nav = [
   { href: "/contact", label: "Contact" },
 ];
 
+const werkgebieden = [
+  { href: "/kraamzorg-hellevoetsluis", label: "Hellevoetsluis" },
+  { href: "/kraamzorg-brielle", label: "Brielle" },
+  { href: "/kraamzorg-oostvoorne", label: "Oostvoorne" },
+  { href: "/kraamzorg-spijkenisse", label: "Spijkenisse" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-espresso text-sand/90">
       <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+        {/* ============ BLOK 1: Logo + beschrijving ============ */}
         <div>
           <Image
             src="/images/logo.png"
@@ -38,49 +46,10 @@ export default function Footer() {
           </p>
         </div>
 
-        <div>
-          <h3 className="mb-4 font-serif text-lg text-blush">Contact</h3>
-          <address className="space-y-2 text-sm not-italic">
-            <p>Struytse Hoeck 106<br />3224 HB Hellevoetsluis</p>
-            <p>
-              <a href="tel:+31610890534" className="hover:text-blush">
-                06 - 10 89 05 34
-              </a>
-            </p>
-            <p>
-              <a href="mailto:info@cindyskraamzorg.nl" className="hover:text-blush">
-                info@cindyskraamzorg.nl
-              </a>
-            </p>
-          </address>
-        </div>
-
-        <div>
-          <h3 className="mb-4 font-serif text-lg text-blush">Erkend door</h3>
-          <ul className="mb-6 space-y-2 text-sm">
-            {partners.map((p) => (
-              <li key={p.name}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="hover:text-blush">
-                  {p.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <h3 className="mb-4 font-serif text-lg text-blush">Samenwerking met</h3>
-          <ul className="space-y-2 text-sm">
-            {samenwerkingen.map((p) => (
-              <li key={p.name}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="hover:text-blush">
-                  {p.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
+        {/* ============ BLOK 2: Snel naar + Werkgebieden ============ */}
         <div>
           <h3 className="mb-4 font-serif text-lg text-blush">Snel naar</h3>
-          <ul className="mb-5 space-y-2 text-sm">
+          <ul className="mb-6 space-y-2 text-sm">
             {nav.map((n) => (
               <li key={n.href}>
                 <Link href={n.href} className="hover:text-blush">
@@ -89,24 +58,89 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <h3 className="mb-3 font-serif text-lg text-blush">Werkgebieden</h3>
+
+          <h3 className="mb-4 font-serif text-lg text-blush">Werkgebieden</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/kraamzorg-hellevoetsluis" className="hover:text-blush">Hellevoetsluis</Link></li>
-            <li><Link href="/kraamzorg-brielle" className="hover:text-blush">Brielle</Link></li>
-            <li><Link href="/kraamzorg-oostvoorne" className="hover:text-blush">Oostvoorne</Link></li>
-            <li><Link href="/kraamzorg-spijkenisse" className="hover:text-blush">Spijkenisse</Link></li>
+            {werkgebieden.map((w) => (
+              <li key={w.href}>
+                <Link href={w.href} className="hover:text-blush">
+                  {w.label}
+                </Link>
+              </li>
+            ))}
           </ul>
+        </div>
+
+        {/* ============ BLOK 3: Erkend door + Samenwerking met ============ */}
+        <div>
+          <h3 className="mb-4 font-serif text-lg text-blush">Erkend door</h3>
+          <ul className="mb-6 space-y-2 text-sm">
+            {partners.map((p) => (
+              <li key={p.name}>
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blush"
+                >
+                  {p.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mb-4 font-serif text-lg text-blush">
+            Samenwerking met
+          </h3>
+          <ul className="space-y-2 text-sm">
+            {samenwerkingen.map((p) => (
+              <li key={p.name}>
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blush"
+                >
+                  {p.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ============ BLOK 4: Contact ============ */}
+        <div>
+          <h3 className="mb-4 font-serif text-lg text-blush">Contact</h3>
+          <address className="space-y-2 text-sm not-italic">
+            <p>
+              Struytse Hoeck 106
+              <br />
+              3224 HB Hellevoetsluis
+            </p>
+            <p>
+              <a href="tel:+31610890534" className="hover:text-blush">
+                06 - 10 89 05 34
+              </a>
+            </p>
+            <p>
+              <a
+                href="mailto:info@cindyskraamzorg.nl"
+                className="hover:text-blush"
+              >
+                info@cindyskraamzorg.nl
+              </a>
+            </p>
+          </address>
         </div>
       </div>
 
+      {/* ============ COPYRIGHT ============ */}
       <div className="border-t border-sand/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-sand/60 sm:flex-row">
           <p>
-            © <Year /> Cindy's Kraamzorg – Alle rechten voorbehouden
+            © <Year /> Cindy&apos;s Kraamzorg – Alle rechten voorbehouden
           </p>
-          <p>
-            KvK 93392230 · KCKZ-nr. 210125
-          </p>
+          <p>KvK 93392230 · KCKZ-nr. 210125</p>
           <p className="text-cream/50">
             Webdesign door{" "}
             <a
