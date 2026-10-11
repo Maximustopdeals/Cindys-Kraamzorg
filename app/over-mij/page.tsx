@@ -24,31 +24,50 @@ const punten = [
 export default function OverMijPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
+      {/* ============ HERO — high-end ============ */}
+      <section className="relative flex min-h-[70vh] items-center overflow-hidden lg:min-h-[75vh]">
+        {/* Achtergrondfoto: Cindy met pasgeboren baby */}
         <Image
-          src="/images/cindy-kinderen.jpg"
-          alt="Kraamverzorgende Cindy met pasgeboren baby en peuter"
+          src="/images/cindy-over-mij-hero.webp"
+          alt="Cindy Koppenaal Steeg van Cindy's Kraamzorg met pasgeboren baby — kraamverzorgende in Hellevoetsluis"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[70%_center] lg:object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand" />
-        <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Over mij</p>
-          <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
-            Cindy Koppenaal Steeg
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Kraamverzorgende uit Hellevoetsluis. Al 22+ jaar met hart en
-            ziel verbonden aan het mooiste vak ter wereld.
-          </p>
+
+        {/* Luxe gradient: donker links voor tekstleesbaarheid, transparant rechts */}
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/15" />
+        {/* Subtiele warme gloed onderaan */}
+        <div className="absolute inset-0 bg-gradient-to-t from-sand/80 via-transparent to-transparent" />
+
+        {/* Content container: links uitgelijnd op desktop */}
+        <div className="container-site relative z-10 py-24 lg:py-32">
+          <div className="max-w-xl text-center sm:text-left">
+            {/* Badge */}
+            <p className="eyebrow animate-fade-in mb-6 !text-blush">
+              Over mij
+            </p>
+
+            {/* H1 */}
+            <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl">
+              Cindy Koppenaal Steeg
+            </h1>
+
+            {/* Sierlijn */}
+            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
+
+            {/* Paragraaf */}
+            <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
+              Kraamverzorgende uit Hellevoetsluis. Al 22+ jaar met hart en
+              ziel verbonden aan het mooiste vak ter wereld.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Verhaal */}
+      {/* ============ VERHAAL ============ */}
       <section className="py-20 sm:py-24">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -67,7 +86,7 @@ export default function OverMijPage() {
                 geweest om kraamzorg te mogen bieden aan al mijn kleinkinderen.
               </p>
               <p>
-                <strong>Sinds 2003</strong> werk ik als kraamverzorgster. Al ruim 22 jaar mag ik gezinnen begeleiden tijdens een van de meest bijzondere periodes in hun leven. Het is een voorrecht om ouders en baby's een fijne start te geven, en dat doe ik nog iedere dag met evenveel liefde en toewijding. Door regelmatige
+                <strong>Sinds 2003</strong> werk ik als kraamverzorgster. Al ruim 22 jaar mag ik gezinnen begeleiden tijdens een van de meest bijzondere periodes in hun leven. Het is een voorrecht om ouders en baby&apos;s een fijne start te geven, en dat doe ik nog iedere dag met evenveel liefde en toewijding. Door regelmatige
                 bijscholing en diverse certificaten waaronder mijn
                 <strong> EHBO-diploma</strong> blijf ik mijn kennis en vaardigheden
                 voortdurend uitbreiden.
@@ -82,7 +101,7 @@ export default function OverMijPage() {
               <p>
                 Elk gezin is uniek en ik pas me graag aan aan jullie wensen.
                 <strong> Flexibiliteit</strong> staat bij mij hoog in het vaandel. Bij
-                Cindy's Kraamzorg kies je voor deskundigheid en een overvloed
+                Cindy&apos;s Kraamzorg kies je voor deskundigheid en een overvloed
                 aan liefde voor jouw prachtige gezin.
               </p>
             </div>
@@ -90,8 +109,8 @@ export default function OverMijPage() {
           <div className="relative">
             <div className="absolute -inset-3 rounded-[2rem] bg-blush/40" aria-hidden="true" />
             <Image
-              src="/images/cindy-gezin.jpg"
-              alt="Cindy met een pasgeboren baby en peuter op de bank"
+              src="/images/cindy-over-mij-verhaal.webp"
+              alt="Cindy Koppenaal Steeg met pasgeboren baby en het logo van Cindy's Kraamzorg"
               width={900}
               height={1200}
               className="relative rounded-[2rem] object-cover shadow-soft"
@@ -100,7 +119,7 @@ export default function OverMijPage() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* ============ STATS ============ */}
       <section className="bg-cream py-16">
         <div className="container-site grid gap-8 text-center sm:grid-cols-3">
           {stats.map((s) => (
@@ -114,7 +133,7 @@ export default function OverMijPage() {
         </div>
       </section>
 
-      {/* Passie */}
+      {/* ============ PASSIE ============ */}
       <section className="py-20 sm:py-24">
         <div className="container-site max-w-3xl text-center">
           <p className="eyebrow mb-3">Persoonlijk</p>
@@ -123,7 +142,7 @@ export default function OverMijPage() {
           </h2>
           <div className="divider-leaf mt-6 mb-6">✦</div>
           <p className="leading-relaxed">
-            Mijn hobby's zijn wandelen en fietsen, maar mijn grootste vreugde
+            Mijn hobby&apos;s zijn wandelen en fietsen, maar mijn grootste vreugde
             komt voort uit het bieden van een rustgevende en gezellige
             kraamweek voor jou en je gezin. Bij mij staat jouw welzijn en dat
             van je kindje voorop maar ook oudere kinderen en je partner
