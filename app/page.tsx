@@ -311,32 +311,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ KCKZ ============ */}
-      <section className="bg-cream py-20">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="eyebrow mb-3">Erkend &amp; gecertificeerd</p>
-            <h2 className="h-serif text-3xl sm:text-4xl">
+      {/* ============ KCKZ — high-end tekstsectie ============ */}
+      <section className="relative overflow-hidden bg-cream py-24 sm:py-32">
+        {/* Subtiel decoratief element */}
+        <div
+          className="pointer-events-none absolute -left-32 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-terracotta/10 blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="container-site relative">
+          <div className="mx-auto max-w-3xl text-center">
+            {/* Badge */}
+            <p className="eyebrow mb-4">Erkend &amp; gecertificeerd</p>
+
+            {/* Sierlijn boven titel */}
+            <div className="mx-auto mb-8 flex items-center justify-center gap-4">
+              <span className="h-px w-16 bg-terracotta/40" />
+              <span className="text-terracotta">✦</span>
+              <span className="h-px w-16 bg-terracotta/40" />
+            </div>
+
+            {/* H2 */}
+            <h2 className="h-serif text-4xl leading-tight sm:text-5xl">
               Kwaliteit die je kunt vertrouwen
             </h2>
-            <div className="divider-leaf mt-6 mb-6">✦</div>
-            <p className="mb-4 leading-relaxed">
-              Cindy's Kraamzorg is erkend door <strong>KCKZ</strong> en voldoet aan de strenge
-              kwaliteitseisen van <strong>KIWA</strong>-certificering. Je kiest dus niet alleen voor
-              warmte, maar ook voor zorg die professioneel is geborgd.
+
+            {/* Sierlijn onder titel */}
+            <div className="divider-leaf mx-auto my-8">✦</div>
+
+            {/* Paragraaf 1 */}
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl">
+              Cindy&apos;s Kraamzorg is erkend door <strong>KCKZ</strong> en voldoet aan de
+              strenge kwaliteitseisen van <strong>KIWA</strong>-certificering.
             </p>
-            <p className="leading-relaxed">
-              Daarnaast werkt Cindy samen met verloskundigen en collega's in de
-              regio, zodat je altijd bent verweven in een sterk zorgnetwerk.
+
+            {/* Paragraaf 2 */}
+            <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-ink/70">
+              Je kiest dus niet alleen voor warmte, maar ook voor zorg die
+              professioneel is geborgd. Daarnaast werkt Cindy samen met verloskundigen
+              en collega&apos;s in de regio — zodat je altijd verweven bent in een sterk
+              zorgnetwerk.
+            </p>
+
+            {/* Certificerings-badges */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+              <span className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-espresso shadow-card">
+                KCKZ Erkend
+              </span>
+              <span className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-espresso shadow-card">
+                KIWA Gecertificeerd
+              </span>
+              <span className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-espresso shadow-card">
+                EHBO Gecertificeerd
+              </span>
+            </div>
+
+            {/* Subtiele ondertitel */}
+            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-ink/40">
+              Kwaliteit · Vertrouwen · Professionaliteit
             </p>
           </div>
-          <Image
-            src="/images/cindy-kckz.jpg"
-            alt="Cindy Koppenaal Steeg in het KCKZ-Special magazine"
-            width={1200}
-            height={1600}
-            className="mx-auto w-full max-w-md rounded-[2rem] object-cover shadow-soft"
-          />
         </div>
       </section>
 
