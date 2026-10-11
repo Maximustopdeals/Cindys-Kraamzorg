@@ -24,7 +24,7 @@ export default function ContactPage() {
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover object-[70%_center] lg:object-right"
+          className="object-cover object-[70%_30%] lg:object-[right_30%]"
         />
 
         {/* Luxe gradient */}
