@@ -196,9 +196,9 @@ export default function KraamzorgPage() {
       </section>
 
       <CtaBand
-        eyebrow="Klaar voor de start?"
-        title="Meld je aan vóór week 16 van je zwangerschap"
-        description="Dan is jouw plek gegarandeerd en kunnen we samen het perfecte zorgplan samenstellen."
+        eyebrow="Gefeliciteerd met je zwangerschap!"
+        title="Meld je zo vroeg mogelijk aan voor kraamzorg"
+        description="Zodat je verzekerd bent van een plekje in jouw kraamtijd."
       />
     </>
   );
