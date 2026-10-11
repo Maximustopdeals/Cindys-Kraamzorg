@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 
 const pageUrl = "https://cindyskraamzorg.nl/kraamzorg-brielle";
@@ -69,18 +68,9 @@ const jsonLd = {
         addressCountry: "NL",
       },
       areaServed: [
-        {
-          "@type": "City",
-          name: "Brielle",
-        },
-        {
-          "@type": "Place",
-          name: "Vierpolders",
-        },
-        {
-          "@type": "Place",
-          name: "Zwartewaal",
-        },
+        { "@type": "City", name: "Brielle" },
+        { "@type": "Place", name: "Vierpolders" },
+        { "@type": "Place", name: "Zwartewaal" },
       ],
       serviceType: "Kraamzorg",
     },
@@ -88,18 +78,8 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "@id": `${pageUrl}#breadcrumb`,
       itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://cindyskraamzorg.nl/",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Kraamzorg Brielle",
-          item: pageUrl,
-        },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://cindyskraamzorg.nl/" },
+        { "@type": "ListItem", position: 2, name: "Kraamzorg Brielle", item: pageUrl },
       ],
     },
   ],
@@ -116,55 +96,46 @@ export default function Page() {
         }}
       />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
-        <Image
-          src="/images/hero-brielle.jpg"
-          alt="Kraamverzorgende Cindy met een pasgeboren baby"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover"
-        />
-
+      {/* ============ HERO — high-end ============ */}
+      <section className="relative overflow-hidden bg-cream pt-32 pb-20 sm:pt-40 sm:pb-24">
         <div
-          className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand"
+          className="pointer-events-none absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blush/30 blur-3xl"
           aria-hidden="true"
         />
 
         <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">
-            Werkgebied
-          </p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-6">Werkgebied</p>
 
-          <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
-            Kraamzorg in Brielle
-          </h1>
+            <h1 className="h-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
+              Kraamzorg in Brielle
+            </h1>
 
-          <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Persoonlijke kraamzorg in Brielle, met aandacht, rust en
-            deskundige begeleiding voor een fijne start van jullie gezin.
-          </p>
+            <div className="my-8 flex items-center justify-center gap-4">
+              <span className="h-px w-16 bg-terracotta/40" />
+              <span className="text-terracotta">✦</span>
+              <span className="h-px w-16 bg-terracotta/40" />
+            </div>
+
+            <p className="text-lg leading-relaxed text-ink/80 sm:text-xl">
+              Persoonlijke kraamzorg in Brielle, met aandacht, rust en
+              deskundige begeleiding voor een fijne start van jullie gezin.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Intro */}
+      {/* ============ INTRO ============ */}
       <section className="py-20 sm:py-24">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="eyebrow mb-3">
-              Kraamzorg in Brielle
-            </p>
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl">
+            <p className="eyebrow mb-3">Kraamzorg in Brielle</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
               Persoonlijke kraamzorg voor gezinnen in Brielle
             </h2>
 
-            <div
-              className="divider-leaf mb-6 mt-6"
-              aria-hidden="true"
-            >
+            <div className="divider-leaf mb-6 mt-6" aria-hidden="true">
               ✦
             </div>
 
@@ -198,10 +169,7 @@ export default function Page() {
 
             <ul className="mt-8 space-y-4">
               {punten.map((punt) => (
-                <li
-                  key={punt}
-                  className="flex items-start gap-3"
-                >
+                <li key={punt} className="flex items-start gap-3">
                   <span
                     className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-terracotta/15 text-sm text-terracotta"
                     aria-hidden="true"
@@ -209,39 +177,19 @@ export default function Page() {
                     ✦
                   </span>
 
-                  <span className="text-ink/80">
-                    {punt}
-                  </span>
+                  <span className="text-ink/80">{punt}</span>
                 </li>
               ))}
             </ul>
           </div>
-
-          <div className="relative">
-            <div
-              className="absolute -inset-3 rounded-[2rem] bg-blush/40"
-              aria-hidden="true"
-            />
-
-            <Image
-              src="/images/cindy-baby-giraf.jpg"
-              alt="Cindy met een pasgeboren baby"
-              width={900}
-              height={1200}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="relative rounded-[2rem] object-cover shadow-soft"
-            />
-          </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ============ FAQ ============ */}
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
-            <p className="eyebrow mb-3">
-              Goed om te weten
-            </p>
+            <p className="eyebrow mb-3">Goed om te weten</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
               Veelgestelde vragen over kraamzorg in Brielle
@@ -265,16 +213,14 @@ export default function Page() {
                   </span>
                 </summary>
 
-                <p className="mt-4 leading-relaxed text-ink/70">
-                  {faq.a}
-                </p>
+                <p className="mt-4 leading-relaxed text-ink/70">{faq.a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ============ CTA ============ */}
       <CtaBand
         eyebrow="Woon je in Brielle?"
         title="Vraag vandaag nog persoonlijke kraamzorg aan"
