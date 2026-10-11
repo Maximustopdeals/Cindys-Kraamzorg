@@ -76,31 +76,50 @@ const faqs = [
 export default function KraamzorgPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
+      {/* ============ HERO — high-end ============ */}
+      <section className="relative flex min-h-[70vh] items-center overflow-hidden lg:min-h-[75vh]">
+        {/* Achtergrondfoto: baby op zachte deken */}
         <Image
           src="/images/baby-deken.png"
-          alt="Pasgeboren baby op een zachte deken — kraamzorg aan huis"
+          alt="Pasgeboren baby op een zachte deken — kraamzorg aan huis in Hellevoetsluis"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[70%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand" />
-        <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Kraamzorg</p>
-          <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
-            Liefdevolle kraamzorg, volledig afgestemd op jullie gezin
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90">
-            De eerste week met je baby is magisch en intens. Ik neem je zorgen
-            uit handen, zodat jij kunt genieten van deze kostbare dagen.
-          </p>
+
+        {/* Luxe gradient: donker links voor tekstleesbaarheid, transparant rechts */}
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/15" />
+        {/* Subtiele warme gloed onderaan */}
+        <div className="absolute inset-0 bg-gradient-to-t from-sand/80 via-transparent to-transparent" />
+
+        {/* Content container: links uitgelijnd op desktop */}
+        <div className="container-site relative z-10 py-24 lg:py-32">
+          <div className="max-w-xl text-center sm:text-left">
+            {/* Badge */}
+            <p className="eyebrow animate-fade-in mb-6 !text-blush">
+              Kraamzorg
+            </p>
+
+            {/* H1 */}
+            <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl">
+              Liefdevolle kraamzorg, volledig afgestemd op jullie gezin
+            </h1>
+
+            {/* Sierlijn */}
+            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
+
+            {/* Paragraaf */}
+            <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
+              De eerste week met je baby is magisch en intens. Ik neem je zorgen
+              uit handen, zodat jij kunt genieten van deze kostbare dagen.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Onderdelen */}
+      {/* ============ ONDERDELEN ============ */}
       <section className="py-20 sm:py-24">
         <div className="container-site">
           <div className="mx-auto max-w-2xl text-center">
@@ -124,7 +143,7 @@ export default function KraamzorgPage() {
         </div>
       </section>
 
-      {/* In 3 stappen */}
+      {/* ============ IN 3 STAPPEN ============ */}
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site">
           <div className="mx-auto max-w-2xl text-center">
@@ -152,7 +171,7 @@ export default function KraamzorgPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ============ FAQ ============ */}
       <section className="py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
