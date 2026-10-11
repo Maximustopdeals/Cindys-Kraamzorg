@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 
 export const metadata: Metadata = {
@@ -10,30 +9,30 @@ export const metadata: Metadata = {
 };
 
 const punten = [
-    "Snel ter plaatse in heel Hellevoetsluis",
-    "Korte lijnen met verloskundigen uit de regio",
-    "Thuisbevalling of poliklinisch: ik ben er zodra je baby er is",
-    "Erkend door KCKZ en volledig vergoed uit het basispakket",
-  ];
+  "Snel ter plaatse in heel Hellevoetsluis",
+  "Korte lijnen met verloskundigen uit de regio",
+  "Thuisbevalling of poliklinisch: ik ben er zodra je baby er is",
+  "Erkend door KCKZ en volledig vergoed uit het basispakket",
+];
 
 const faqs = [
-    {
-      q: "Hoe snel ben je bij mij in Hellevoetsluis?",
-      a: "Omdat ik zelf in Hellevoetsluis woon, ben ik doorgaans binnen 15 tot 30 minuten bij je aan huis ook 's nachts als dat nodig is.",
-    },
-    {
-      q: "Begeleid je ook thuisbevallingen in Hellevoetsluis?",
-      a: "Zeker. Bij een thuisbevalling in overleg met je verloskundige ben ik vanaf het moment van de bevalling aanwezig om direct over te nemen in de kraamzorg.",
-    },
-    {
-      q: "Kan ik ook kraamzorg krijgen na een poliklinische bevalling?",
-      a: "Ja, na een poliklinische (poli) bevalling kom ik je thuis opvangen. We stemmen vooraf af wanneer je naar huis mag en hoe laat ik er ben.",
-    },
-    {
-      q: "Hoe vraag ik kraamzorg aan in Hellevoetsluis?",
-      a: "Via het aanmeldformulier op deze website, telefonisch op 06-10890534 of per e-mail. Bij voorkeur zodra je weet dat je zwanger bent, zo ben je verzekerd van een plek wanneer je die nodig hebt.",
-    },
-  ];
+  {
+    q: "Hoe snel ben je bij mij in Hellevoetsluis?",
+    a: "Omdat ik zelf in Hellevoetsluis woon, ben ik doorgaans binnen 15 tot 30 minuten bij je aan huis ook 's nachts als dat nodig is.",
+  },
+  {
+    q: "Begeleid je ook thuisbevallingen in Hellevoetsluis?",
+    a: "Zeker. Bij een thuisbevalling in overleg met je verloskundige ben ik vanaf het moment van de bevalling aanwezig om direct over te nemen in de kraamzorg.",
+  },
+  {
+    q: "Kan ik ook kraamzorg krijgen na een poliklinische bevalling?",
+    a: "Ja, na een poliklinische (poli) bevalling kom ik je thuis opvangen. We stemmen vooraf af wanneer je naar huis mag en hoe laat ik er ben.",
+  },
+  {
+    q: "Hoe vraag ik kraamzorg aan in Hellevoetsluis?",
+    a: "Via het aanmeldformulier op deze website, telefonisch op 06-10890534 of per e-mail. Bij voorkeur zodra je weet dat je zwanger bent, zo ben je verzekerd van een plek wanneer je die nodig hebt.",
+  },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -70,33 +69,40 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
-        <Image
-          src="/images/hero-hellevoetsluis.jpg"
-          alt="Pasgeboren baby — kraamzorg in Hellevoetsluis"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover"
+      {/* ============ HERO — high-end ============ */}
+      <section className="relative overflow-hidden bg-cream pt-32 pb-20 sm:pt-40 sm:pb-24">
+        <div
+          className="pointer-events-none absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blush/30 blur-3xl"
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand" />
+
         <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Werkgebied</p>
-          <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
-            Kraamzorg in Hellevoetsluis
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Persoonlijke kraamzorg aan huis, vanuit de eigen plaats. Cindy woont en werkt in Hellevoetsluis — dus altijd dichtbij als je haar nodig hebt.
-          </p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-6">Werkgebied</p>
+
+            <h1 className="h-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
+              Kraamzorg in Hellevoetsluis
+            </h1>
+
+            <div className="my-8 flex items-center justify-center gap-4">
+              <span className="h-px w-16 bg-terracotta/40" />
+              <span className="text-terracotta">✦</span>
+              <span className="h-px w-16 bg-terracotta/40" />
+            </div>
+
+            <p className="text-lg leading-relaxed text-ink/80 sm:text-xl">
+              Persoonlijke kraamzorg aan huis, vanuit de eigen plaats. Cindy
+              woont en werkt in Hellevoetsluis — dus altijd dichtbij als je
+              haar nodig hebt.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Intro */}
+      {/* ============ INTRO ============ */}
       <section className="py-20 sm:py-24">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div>
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl">
             <p className="eyebrow mb-3">Kraamzorg in Hellevoetsluis</p>
             <h2 className="h-serif text-3xl sm:text-4xl">
               Jouw kraamverzorgende om de hoek
@@ -104,7 +110,7 @@ export default function Page() {
             <div className="divider-leaf mt-6 mb-6">✦</div>
             <div className="space-y-4 leading-relaxed">
               <p>
-                Hellevoetsluis is de thuisbasis van Cindy's Kraamzorg. Vanuit de
+                Hellevoetsluis is de thuisbasis van Cindy&apos;s Kraamzorg. Vanuit de
                 Struytse Hoeck ben ik binnen enkele minuten bij je aan huis — of
                 je nu in de oude binnenstad woont, in Nieuw-Helvoet of aan de
                 rand van de gemeente richting Nieuwenhoorn of Zuidland.
@@ -130,20 +136,10 @@ export default function Page() {
               ))}
             </ul>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-[2rem] bg-blush/40" aria-hidden="true" />
-            <Image
-              src="/images/cindy-baby.jpg"
-              alt="Cindy met een pasgeboren baby tijdens een kraamweek in Hellevoetsluis"
-              width={900}
-              height={1200}
-              className="relative rounded-[2rem] object-cover shadow-soft"
-            />
-          </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ============ FAQ ============ */}
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
