@@ -16,7 +16,7 @@ export default function ContactPage() {
     <>
       {/* ============ HERO — high-end ============ */}
       <section className="relative flex min-h-[65vh] items-center overflow-hidden lg:min-h-[70vh]">
-        {/* Achtergrondfoto: Cindy met baby over schouder */}
+        {/* Achtergrondfoto: Cindy links in kader, ruimte rechts voor tekst */}
         <Image
           src="/images/cindy-contact-hero.webp"
           alt="Cindy van Cindy's Kraamzorg met pasgeboren baby — neem contact op"
@@ -27,23 +27,24 @@ export default function ContactPage() {
           className="object-cover object-[20%_30%] lg:object-[left_30%]"
         />
 
-        {/* Luxe gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/15" />
+        {/* Luxe gradient — donker RECHTS voor tekstleesbaarheid */}
+        <div className="absolute inset-0 bg-gradient-to-l from-espresso/85 via-espresso/55 to-espresso/15" />
         <div className="absolute inset-0 bg-gradient-to-t from-sand/80 via-transparent to-transparent" />
 
         <div className="container-site relative z-10 py-24 lg:py-32">
-          <div className="max-w-xl text-center sm:text-left">
+          {/* Tekst rechts uitgelijnd op desktop */}
+          <div className="ml-auto max-w-xl text-center sm:text-right">
             <p className="eyebrow animate-fade-in mb-6 !text-blush">Contact</p>
 
             <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl">
               Neem de eerste stap naar een rustige kraamperiode
             </h1>
 
-            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
+            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:ml-auto sm:mr-0" />
 
             <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
-              Bel, app of stuur een berichtje — ik denk graag met je mee en
-              sta voor je klaar.
+              Bel, app of stuur een berichtje — ik denk graag met je mee en sta
+              voor je klaar.
             </p>
           </div>
         </div>
