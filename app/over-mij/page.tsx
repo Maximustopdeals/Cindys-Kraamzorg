@@ -76,7 +76,7 @@ export default function OverMijPage() {
                     priority
                     fetchPriority="high"
                     sizes="(max-width: 1024px) 320px, 384px"
-                    className="object-cover object-[30%_center]"
+                    className="object-cover object-[20%_center]"
                   />
                 </div>
 
