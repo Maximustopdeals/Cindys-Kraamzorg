@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 
 const pageUrl = "https://cindyskraamzorg.nl/kraamzorg-oostvoorne";
@@ -120,18 +119,8 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "@id": `${pageUrl}#breadcrumb`,
       itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://cindyskraamzorg.nl/",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Kraamzorg Oostvoorne",
-          item: pageUrl,
-        },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://cindyskraamzorg.nl/" },
+        { "@type": "ListItem", position: 2, name: "Kraamzorg Oostvoorne", item: pageUrl },
       ],
     },
     {
@@ -152,7 +141,6 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
-      {/* Structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -160,43 +148,40 @@ export default function Page() {
         }}
       />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-16 pt-40">
-        <Image
-          src="/images/hero-oostvoorne.jpg"
-          alt="Cindy met een pasgeboren baby — kraamzorg in Oostvoorne"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          quality={85}
-          className="object-cover"
-        />
-
+      {/* ============ HERO — high-end ============ */}
+      <section className="relative overflow-hidden bg-cream pt-32 pb-20 sm:pt-40 sm:pb-24">
         <div
-          className="absolute inset-0 bg-gradient-to-b from-espresso/50 via-espresso/20 to-sand"
+          className="pointer-events-none absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blush/30 blur-3xl"
           aria-hidden="true"
         />
 
         <div className="container-site relative">
-          <p className="eyebrow mb-3 !text-blush">Werkgebied</p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-6">Werkgebied</p>
 
-          <h1 className="h-serif max-w-3xl text-4xl text-white sm:text-5xl">
-            Kraamzorg in Oostvoorne
-          </h1>
+            <h1 className="h-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
+              Kraamzorg in Oostvoorne
+            </h1>
 
-          <p className="mt-4 max-w-2xl text-lg text-white/90">
-            Persoonlijke kraamzorg in Oostvoorne, met rust, aandacht en
-            deskundige begeleiding tijdens de eerste bijzondere dagen met
-            jullie baby.
-          </p>
+            <div className="my-8 flex items-center justify-center gap-4">
+              <span className="h-px w-16 bg-terracotta/40" />
+              <span className="text-terracotta">✦</span>
+              <span className="h-px w-16 bg-terracotta/40" />
+            </div>
+
+            <p className="text-lg leading-relaxed text-ink/80 sm:text-xl">
+              Persoonlijke kraamzorg in Oostvoorne, met rust, aandacht en
+              deskundige begeleiding tijdens de eerste bijzondere dagen met
+              jullie baby.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Intro */}
+      {/* ============ INTRO ============ */}
       <section className="py-20 sm:py-24">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-2">
-          <div>
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl">
             <p className="eyebrow mb-3">Kraamzorg in Oostvoorne</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
@@ -256,27 +241,10 @@ export default function Page() {
               ))}
             </ul>
           </div>
-
-          <div className="relative">
-            <div
-              className="absolute -inset-3 rounded-[2rem] bg-blush/40"
-              aria-hidden="true"
-            />
-
-            <Image
-              src="/images/cindy-kinderen-2.jpg"
-              alt="Cindy met een pasgeboren baby tijdens een kraamweek in Oostvoorne"
-              width={900}
-              height={1200}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              quality={85}
-              className="relative rounded-[2rem] object-cover shadow-soft"
-            />
-          </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ============ FAQ ============ */}
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-site max-w-3xl">
           <div className="text-center">
@@ -313,7 +281,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CTA */}
       <CtaBand
         eyebrow="Woon je in Oostvoorne of omgeving?"
         title="Vraag persoonlijke kraamzorg aan"
