@@ -28,7 +28,7 @@ export default function OverMijPage() {
       <section className="relative flex min-h-[70vh] items-center overflow-hidden lg:min-h-[75vh]">
         {/* Achtergrondfoto: Cindy met pasgeboren baby */}
         <Image
-          src="/images/cindy-over-mij-hero.webp"
+          src="/images/cindy-over-mij.webp"
           alt="Cindy Koppenaal Steeg van Cindy's Kraamzorg met pasgeboren baby — kraamverzorgende in Hellevoetsluis"
           fill
           priority
