@@ -246,7 +246,7 @@ export default function Home() {
         <div className="container-site grid items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
             <Image
-              src="/images/cindy-aandacht.webp"
+              src="/images/cindy-kraamzorg.webp"
               alt="Cindy van Cindy's Kraamzorg verzorgt een pasgeboren baby op de commode — persoonlijke kraamzorg aan huis"
               width={900}
               height={1200}
