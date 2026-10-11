@@ -70,7 +70,7 @@ export default function OverMijPage() {
                 {/* Rond portret */}
                 <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white shadow-soft">
                   <Image
-                    src="/images/cindy-over-mij-hero.webp"
+                    src="/images/cindy-over-mij.webp"
                     alt="Cindy Koppenaal Steeg van Cindy's Kraamzorg — kraamverzorgende in Hellevoetsluis"
                     fill
                     priority
