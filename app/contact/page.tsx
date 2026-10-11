@@ -43,7 +43,7 @@ export default function ContactPage() {
             <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:ml-auto sm:mr-0" />
 
             <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
-              Bel, app of stuur een berichtje — ik denk graag met je mee en sta
+              Bel, app of stuur een berichtje, ik denk graag met je mee en sta
               voor je klaar.
             </p>
           </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
             <div className="divider-leaf mt-6 mb-6">✦</div>
             <div className="space-y-4 leading-relaxed">
               <p>
-                De kraamperiode kan een uitdagende tijd zijn — zeker als je voor
+                De kraamperiode kan een uitdagende tijd zijn zeker als je voor
                 het eerst ouders wordt. Daarom sta ik, <strong>Cindy</strong>, als ervaren
                 kraamverzorgende voor je klaar. Met persoonlijke aandacht help ik
                 je op weg in het ouderschap: praktisch én emotioneel.
