@@ -61,40 +61,66 @@ export default function Home() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[92vh] items-center overflow-hidden">
+        {/* Fullscreen achtergrondfoto: Cindy + zusje + baby */}
         <Image
-          src="/images/hero-home.jpg"
-          alt="Pasgeboren baby met roze bloem — Cindy's Kraamzorg Hellevoetsluis"
+          src="/images/cindy-hero.webp"
+          alt="Cindy van Cindy's Kraamzorg met pasgeboren baby en zusje — Persoonlijke kraamzorg in Hellevoetsluis"
           fill
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[75%_center] lg:object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-espresso/60 via-espresso/30 to-sand" />
-        <div className="container-site relative z-10 pb-24 pt-36 text-center">
-          <p className="eyebrow animate-fade-in mb-4 !text-blush">
-            Persoonlijk &amp; professioneel
-          </p>
-          <h1 className="h-serif animate-fade-up mx-auto max-w-3xl text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-            Kraamzorg met rust, liefde &amp; ervaring in Hellevoetsluis
-          </h1>
-          <p className="animate-fade-up mx-auto mt-6 max-w-2xl text-lg text-white/90 [animation-delay:150ms]">
-            Bij Cindy's Kraamzorg draait alles om jouw vertrouwen en comfort.
-            Met ruim 22 jaar ervaring begeleid ik jullie eerste dagen als gezin,
-            warm, deskundig en volledig afgestemd op jullie wensen.
-          </p>
-          <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-4 [animation-delay:300ms]">
-            <a href={AANMELD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Kraamzorg aanvragen
-            </a>
-            <Link href="/over-mij" className="btn-secondary">
-              Maak kennis met Cindy
-            </Link>
+
+        {/* Luxe gradient: donker aan de linkerkant voor tekstleesbaarheid, transparant naar rechts */}
+        <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/10" />
+        {/* Subtiele warme gloed onderaan */}
+        <div className="absolute inset-0 bg-gradient-to-t from-sand/90 via-transparent to-transparent" />
+
+        {/* Content container: links uitgelijnd op desktop */}
+        <div className="container-site relative z-10 py-28 lg:py-36">
+          <div className="max-w-xl text-center sm:text-left">
+            {/* Badge */}
+            <p className="eyebrow animate-fade-in mb-6 !text-blush">
+              Persoonlijk &amp; professioneel
+            </p>
+
+            {/* H1 */}
+            <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl lg:text-6xl">
+              Kraamzorg met rust, liefde &amp; ervaring in Hellevoetsluis
+            </h1>
+
+            {/* Sierlijn */}
+            <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
+
+            {/* Paragraaf */}
+            <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
+              Bij Cindy&apos;s Kraamzorg draait alles om jouw vertrouwen en comfort.
+              Met ruim 22 jaar ervaring begeleid ik jullie eerste dagen als gezin,
+              warm, deskundig en volledig afgestemd op jullie wensen.
+            </p>
+
+            {/* Knoppen */}
+            <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center sm:justify-start gap-4 [animation-delay:300ms]">
+              <a
+                href={AANMELD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Kraamzorg aanvragen
+              </a>
+              <Link href="/over-mij" className="btn-secondary">
+                Maak kennis met Cindy
+              </Link>
+            </div>
+
+            {/* Vertrouwensbadge */}
+            <p className="animate-fade-in mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 [animation-delay:450ms]">
+              Erkend door KCKZ · Hellevoetsluis &amp; omgeving
+            </p>
           </div>
-          <p className="animate-fade-in mt-8 text-sm font-medium uppercase tracking-widest text-white/70 [animation-delay:450ms]">
-            Erkend door KCKZ · Hellevoetsluis &amp; omgeving
-          </p>
         </div>
       </section>
 
