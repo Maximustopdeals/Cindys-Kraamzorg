@@ -45,7 +45,9 @@ export default function Navbar() {
     setWbOpen(false);
   }, [pathname]);
 
-  const inWerkgebied = werkgebieden.some((w) => pathname.startsWith(w.href));
+  const inWerkgebied =
+    pathname.startsWith("/werkgebieden") ||
+    werkgebieden.some((w) => pathname.startsWith(w.href));
 
   const linkColor = (active: boolean) =>
     `text-sm font-semibold uppercase tracking-wider transition-colors ${
@@ -68,7 +70,11 @@ export default function Navbar() {
         className="container-site flex items-center justify-between py-3"
         aria-label="Hoofdnavigatie"
       >
-        <Link href="/" className="relative z-10 flex items-center gap-3" aria-label="Cindy's Kraamzorg - Home">
+        <Link
+          href="/"
+          className="relative z-10 flex items-center gap-3"
+          aria-label="Cindy's Kraamzorg - Home"
+        >
           <Image
             src="/images/logo-badge.png"
             alt="Logo Cindy's Kraamzorg"
@@ -82,20 +88,30 @@ export default function Navbar() {
         <ul className="hidden items-center gap-6 lg:flex">
           {links.slice(0, 2).map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={linkColor(link.href === "/" ? pathname === "/" : pathname.startsWith(link.href))}>
+              <Link
+                href={link.href}
+                className={linkColor(
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href)
+                )}
+              >
                 {link.label}
               </Link>
             </li>
           ))}
 
           {/* Werkgebieden dropdown */}
-          <li className="relative" onMouseLeave={() => setWbOpen(false)}>
-            <button
-              type="button"
-              onMouseEnter={() => setWbOpen(true)}
-              onClick={() => setWbOpen((v) => !v)}
-              aria-expanded={wbOpen}
+          <li
+            className="relative"
+            onMouseEnter={() => setWbOpen(true)}
+            onMouseLeave={() => setWbOpen(false)}
+          >
+            <Link
+              href="/werkgebieden"
               className={`${linkColor(inWerkgebied)} flex items-center gap-1.5`}
+              aria-haspopup="true"
+              aria-expanded={wbOpen}
             >
               Werkgebieden
               <svg
@@ -112,34 +128,48 @@ export default function Navbar() {
               >
                 <path d="m6 9 6 6 6-6" />
               </svg>
-            </button>
+            </Link>
             {wbOpen && (
-            <div
-              className="absolute left-1/2 top-full w-56 -translate-x-1/2 pt-3"
-            >
-              <ul className="overflow-hidden rounded-2xl bg-white p-2 shadow-soft">
-                {werkgebieden.map((w) => (
-                  <li key={w.href}>
+              <div className="absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3">
+                <ul className="overflow-hidden rounded-2xl bg-white p-2 shadow-soft">
+                  {werkgebieden.map((w) => (
+                    <li key={w.href}>
+                      <Link
+                        href={w.href}
+                        className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
+                          pathname === w.href
+                            ? "bg-cream text-terracotta"
+                            : "text-espresso hover:bg-cream hover:text-terracotta"
+                        }`}
+                      >
+                        Kraamzorg {w.label}
+                      </Link>
+                    </li>
+                  ))}
+                  {/* Link naar overzichtspagina */}
+                  <li className="mt-1 border-t border-ink/10 pt-1">
                     <Link
-                      href={w.href}
-                      className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors ${
-                        pathname === w.href
+                      href="/werkgebieden"
+                      className={`block rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
+                        pathname === "/werkgebieden"
                           ? "bg-cream text-terracotta"
-                          : "text-espresso hover:bg-cream hover:text-terracotta"
+                          : "text-terracotta hover:bg-cream"
                       }`}
                     >
-                      Kraamzorg {w.label}
+                      Bekijk alle werkgebieden →
                     </Link>
                   </li>
-                ))}
-              </ul>
-            </div>
+                </ul>
+              </div>
             )}
           </li>
 
           {links.slice(2).map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={linkColor(pathname.startsWith(link.href))}>
+              <Link
+                href={link.href}
+                className={linkColor(pathname.startsWith(link.href))}
+              >
                 {link.label}
               </Link>
             </li>
@@ -166,7 +196,15 @@ export default function Navbar() {
             scrolled || open ? "text-espresso" : "text-white"
           }`}
         >
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
             {open ? (
               <path d="M6 6l12 12M18 6L6 18" />
             ) : (
@@ -178,86 +216,108 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-      <div
-        className="overflow-hidden lg:hidden"
-      >
-        <ul className="container-site flex flex-col gap-1 pb-6">
-          {links.slice(0, 2).map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`block rounded-xl px-4 py-3 font-serif text-lg ${
-                  pathname === link.href ? "bg-cream text-terracotta" : "text-espresso hover:bg-cream"
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+        <div className="overflow-hidden lg:hidden">
+          <ul className="container-site flex flex-col gap-1 pb-6">
+            {links.slice(0, 2).map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block rounded-xl px-4 py-3 font-serif text-lg ${
+                    pathname === link.href
+                      ? "bg-cream text-terracotta"
+                      : "text-espresso hover:bg-cream"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
 
-          {/* Werkgebieden uitklapbaar (mobiel) */}
-          <li>
-            <button
-              type="button"
-              onClick={() => setWbOpen((v) => !v)}
-              aria-expanded={wbOpen}
-              className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left font-serif text-lg text-espresso hover:bg-cream"
-            >
-              Werkgebieden
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={`transition-transform duration-300 ${wbOpen ? "rotate-180" : ""}`}
-                aria-hidden="true"
+            {/* Werkgebieden uitklapbaar (mobiel) */}
+            <li>
+              <button
+                type="button"
+                onClick={() => setWbOpen((v) => !v)}
+                aria-expanded={wbOpen}
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left font-serif text-lg text-espresso hover:bg-cream"
               >
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </button>
-            {wbOpen && (
-            <div>
-              <ul className="ml-4 space-y-1 py-1">
-                {werkgebieden.map((w) => (
-                  <li key={w.href}>
-                    <Link
-                      href={w.href}
-                      className={`block rounded-xl px-4 py-2.5 text-base ${
-                        pathname === w.href ? "bg-cream text-terracotta" : "text-espresso/80 hover:bg-cream"
-                      }`}
-                    >
-                      Kraamzorg {w.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            )}
-          </li>
-
-          {links.slice(2).map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`block rounded-xl px-4 py-3 font-serif text-lg ${
-                  pathname.startsWith(link.href) ? "bg-cream text-terracotta" : "text-espresso hover:bg-cream"
-                }`}
-              >
-                {link.label}
-              </Link>
+                Werkgebieden
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`transition-transform duration-300 ${wbOpen ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              {wbOpen && (
+                <div>
+                  <ul className="ml-4 space-y-1 py-1">
+                    {werkgebieden.map((w) => (
+                      <li key={w.href}>
+                        <Link
+                          href={w.href}
+                          className={`block rounded-xl px-4 py-2.5 text-base ${
+                            pathname === w.href
+                              ? "bg-cream text-terracotta"
+                              : "text-espresso/80 hover:bg-cream"
+                          }`}
+                        >
+                          Kraamzorg {w.label}
+                        </Link>
+                      </li>
+                    ))}
+                    {/* Link naar overzichtspagina (mobiel) */}
+                    <li className="mt-1 border-t border-ink/10 pt-1">
+                      <Link
+                        href="/werkgebieden"
+                        className={`block rounded-xl px-4 py-2.5 text-base font-semibold ${
+                          pathname === "/werkgebieden"
+                            ? "bg-cream text-terracotta"
+                            : "text-terracotta hover:bg-cream"
+                        }`}
+                      >
+                        Bekijk alle werkgebieden →
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </li>
-          ))}
-          <li className="pt-2">
-            <a href={AANMELD_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full">
-              Kraamzorg aanvragen
-            </a>
-          </li>
-        </ul>
-      </div>
+
+            {links.slice(2).map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block rounded-xl px-4 py-3 font-serif text-lg ${
+                    pathname.startsWith(link.href)
+                      ? "bg-cream text-terracotta"
+                      : "text-espresso hover:bg-cream"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="pt-2">
+              <a
+                href={AANMELD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full"
+              >
+                Kraamzorg aanvragen
+              </a>
+            </li>
+          </ul>
+        </div>
       )}
     </header>
   );
