@@ -23,8 +23,11 @@ const nav = [
 const werkgebieden = [
   { href: "/kraamzorg-hellevoetsluis", label: "Hellevoetsluis" },
   { href: "/kraamzorg-brielle", label: "Brielle" },
-  { href: "/kraamzorg-oostvoorne", label: "Oostvoorne" },
+  { href: "/kraamzorg-oostvoorne", label: "Voorne aan Zee" },
   { href: "/kraamzorg-spijkenisse", label: "Spijkenisse" },
+  { href: "/contact", label: "Rhoon · Poortugaal · Barendrecht" },
+  { href: "/contact", label: "Rotterdam-Zuid · Goeree-Overflakkee" },
+  { href: "/contact", label: "Verder weg: in overleg" },
 ];
 
 export default function Footer() {
@@ -42,7 +45,7 @@ export default function Footer() {
           />
           <p className="text-sm leading-relaxed">
             Persoonlijke, liefdevolle kraamzorg aan huis in Hellevoetsluis en
-            omgeving. Al ruim 22 jaar ervaring.
+            omgeving. Al ruim 23 jaar ervaring.
           </p>
         </div>
 
@@ -62,7 +65,7 @@ export default function Footer() {
           <h3 className="mb-4 font-serif text-lg text-blush">Werkgebieden</h3>
           <ul className="space-y-2 text-sm">
             {werkgebieden.map((w) => (
-              <li key={w.href}>
+              <li key={w.label}>
                 <Link href={w.href} className="hover:text-blush">
                   {w.label}
                 </Link>
