@@ -27,7 +27,8 @@ const werkgebieden = [
   { href: "/kraamzorg-spijkenisse", label: "Spijkenisse" },
   { href: "/kraamzorg-rhoon-poortugaal", label: "Rhoon & Poortugaal" },
   { href: "/kraamzorg-barendrecht", label: "Barendrecht" },
-  { href: "/contact", label: "Rotterdam-Zuid · Goeree-Overflakkee" },
+  { href: "/kraamzorg-rotterdam-zuid", label: "Rotterdam-Zuid" },
+  { href: "/contact", label: "Goeree-Overflakkee" },
   { href: "/contact", label: "Verder weg: in overleg" },
 ];
 
