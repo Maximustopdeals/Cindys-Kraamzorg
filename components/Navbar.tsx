@@ -21,6 +21,7 @@ const werkgebieden = [
   { href: "/kraamzorg-brielle", label: "Brielle" },
   { href: "/kraamzorg-oostvoorne", label: "Voorne aan Zee" },
   { href: "/kraamzorg-spijkenisse", label: "Spijkenisse" },
+  { href: "/kraamzorg-rhoon-poortugaal", label: "Rhoon & Poortugaal" },
 ];
 
 export default function Navbar() {
