@@ -29,7 +29,7 @@ const werkgebieden = [
   { href: "/kraamzorg-barendrecht", label: "Barendrecht" },
   { href: "/kraamzorg-rotterdam-zuid", label: "Rotterdam-Zuid" },
   { href: "/kraamzorg-goeree-overflakkee", label: "Goeree-Overflakkee" },
-  { href: "/contact", label: "Verder weg: in overleg" },
+  { href: "/werkgebieden", label: "Bekijk alle werkgebieden →" },
 ];
 
 export default function Footer() {
