@@ -5,9 +5,9 @@ const pageUrl = "https://cindyskraamzorg.nl/kraamzorg-oostvoorne";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cindyskraamzorg.nl"),
-  title: "Kraamzorg Oostvoorne | Persoonlijke kraamzorg van Cindy",
+  title: "Kraamzorg Voorne aan Zee | Persoonlijke kraamzorg van Cindy",
   description:
-    "Persoonlijke kraamzorg in Oostvoorne van Cindy. 22 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin. Vraag kraamzorg aan.",
+    "Persoonlijke kraamzorg in Voorne aan Zee van Cindy. 23 jaar ervaring, erkend door KCKZ, beschikbaar in Oostvoorne, Rockanje, Tinte, Vierpolders en heel Voorne aan Zee.",
   alternates: {
     canonical: "/kraamzorg-oostvoorne",
   },
@@ -16,24 +16,24 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     url: "/kraamzorg-oostvoorne",
     siteName: "Cindy's Kraamzorg",
-    title: "Kraamzorg Oostvoorne | Persoonlijke kraamzorg van Cindy",
+    title: "Kraamzorg Voorne aan Zee | Persoonlijke kraamzorg van Cindy",
     description:
-      "Persoonlijke kraamzorg in Oostvoorne van Cindy. 22 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin.",
+      "Persoonlijke kraamzorg in Voorne aan Zee van Cindy. 23 jaar ervaring, erkend door KCKZ en aandacht voor moeder, baby en gezin.",
     images: [
       {
-        url: "/images/og-oostvoorne.jpg",
+        url: "/images/og-voorne-aan-zee.jpg",
         width: 1200,
         height: 630,
-        alt: "Kraamzorg in Oostvoorne — Cindy's Kraamzorg",
+        alt: "Kraamzorg in Voorne aan Zee — Cindy's Kraamzorg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kraamzorg Oostvoorne | Persoonlijke kraamzorg van Cindy",
+    title: "Kraamzorg Voorne aan Zee | Persoonlijke kraamzorg van Cindy",
     description:
-      "Persoonlijke kraamzorg in Oostvoorne van Cindy. 22 jaar ervaring, erkend door KCKZ.",
-    images: ["/images/og-oostvoorne.jpg"],
+      "Persoonlijke kraamzorg in Voorne aan Zee van Cindy. 23 jaar ervaring, erkend door KCKZ.",
+    images: ["/images/og-voorne-aan-zee.jpg"],
   },
   robots: {
     index: true,
@@ -47,21 +47,32 @@ export const metadata: Metadata = {
   },
 };
 
+const kernen = [
+  { name: "Oostvoorne", type: "Dorp" },
+  { name: "Rockanje", type: "Dorp" },
+  { name: "Tinte", type: "Dorp" },
+  { name: "Vierpolders", type: "Dorp" },
+  { name: "Zwartewaal", type: "Dorp" },
+  { name: "Nieuwenhoorn", type: "Dorp" },
+  { name: "Nieuw-Helvoet", type: "Dorp" },
+  { name: "Oudenhoorn", type: "Dorp" },
+];
+
 const punten = [
-  "Kraamzorg in Oostvoorne en omgeving",
-  "Ook beschikbaar voor gezinnen in Rockanje en Tinte",
+  "Kraamzorg in heel Voorne aan Zee",
+  "Ook beschikbaar in Rockanje, Tinte, Vierpolders en Zwartewaal",
   "Eén vaste kraamverzorgende tijdens de kraamperiode",
   "Persoonlijke begeleiding voor moeder, baby en gezin",
 ];
 
 const faqs = [
   {
-    q: "Bied je ook kraamzorg in Rockanje en Tinte?",
-    a: "Ja, naast Oostvoorne bied ik ook kraamzorg in Rockanje, Tinte en de omliggende omgeving. Vooraf bespreken we jullie wensen en maken we duidelijke afspraken over de kraamzorg.",
+    q: "In welke kernen van Voorne aan Zee werk je?",
+    a: "Ik bied kraamzorg in heel Voorne aan Zee: Oostvoorne, Rockanje, Tinte, Vierpolders, Zwartewaal, Nieuwenhoorn, Nieuw-Helvoet en Oudenhoorn. Vooraf bespreken we jullie wensen en maken we duidelijke afspraken over de kraamzorg.",
   },
   {
     q: "Kun je kraamzorg bieden na een bevalling in Rotterdam?",
-    a: "Ja. Wanneer je bijvoorbeeld in het Maasstad Ziekenhuis in Rotterdam bevalt en daarna naar huis mag, kan de kraamzorg bij jullie thuis in Oostvoorne worden voortgezet.",
+    a: "Ja. Wanneer je bijvoorbeeld in het Maasstad Ziekenhuis in Rotterdam bevalt en daarna naar huis mag, kan de kraamzorg bij jullie thuis in Voorne aan Zee worden voortgezet.",
   },
   {
     q: "Wat als ik in het ziekenhuis in Spijkenisse beval?",
@@ -84,9 +95,9 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: "Kraamzorg in Oostvoorne",
+      name: "Kraamzorg in Voorne aan Zee",
       description:
-        "Persoonlijke kraamzorg in Oostvoorne van Cindy, met deskundige begeleiding en praktische ondersteuning tijdens de kraamtijd.",
+        "Persoonlijke kraamzorg in Voorne aan Zee van Cindy, met deskundige begeleiding en praktische ondersteuning tijdens de kraamtijd.",
       inLanguage: "nl-NL",
       about: {
         "@id": `${pageUrl}#business`,
@@ -112,6 +123,11 @@ const jsonLd = {
         { "@type": "Place", name: "Oostvoorne" },
         { "@type": "Place", name: "Rockanje" },
         { "@type": "Place", name: "Tinte" },
+        { "@type": "Place", name: "Vierpolders" },
+        { "@type": "Place", name: "Zwartewaal" },
+        { "@type": "Place", name: "Nieuwenhoorn" },
+        { "@type": "Place", name: "Nieuw-Helvoet" },
+        { "@type": "Place", name: "Oudenhoorn" },
       ],
       serviceType: "Kraamzorg",
     },
@@ -119,8 +135,18 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "@id": `${pageUrl}#breadcrumb`,
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://cindyskraamzorg.nl/" },
-        { "@type": "ListItem", position: 2, name: "Kraamzorg Oostvoorne", item: pageUrl },
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://cindyskraamzorg.nl/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Kraamzorg Voorne aan Zee",
+          item: pageUrl,
+        },
       ],
     },
     {
@@ -141,6 +167,7 @@ const jsonLd = {
 export default function Page() {
   return (
     <>
+      {/* Structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -160,7 +187,7 @@ export default function Page() {
             <p className="eyebrow mb-6">Werkgebied</p>
 
             <h1 className="h-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
-              Kraamzorg in Oostvoorne
+              Kraamzorg in Voorne aan Zee
             </h1>
 
             <div className="my-8 flex items-center justify-center gap-4">
@@ -170,7 +197,8 @@ export default function Page() {
             </div>
 
             <p className="text-lg leading-relaxed text-ink/80 sm:text-xl">
-              Persoonlijke kraamzorg in Oostvoorne, met rust, aandacht en
+              Persoonlijke kraamzorg in Oostvoorne, Rockanje, Tinte en alle
+              andere kernen van Voorne aan Zee. Met rust, aandacht en
               deskundige begeleiding tijdens de eerste bijzondere dagen met
               jullie baby.
             </p>
@@ -182,10 +210,10 @@ export default function Page() {
       <section className="py-20 sm:py-24">
         <div className="container-site">
           <div className="mx-auto max-w-3xl">
-            <p className="eyebrow mb-3">Kraamzorg in Oostvoorne</p>
+            <p className="eyebrow mb-3">Kraamzorg in Voorne aan Zee</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
-              Persoonlijke kraamzorg in Oostvoorne
+              Persoonlijke kraamzorg in jouw kern
             </h2>
 
             <div className="divider-leaf mb-6 mt-6" aria-hidden="true">
@@ -194,17 +222,18 @@ export default function Page() {
 
             <div className="space-y-4 leading-relaxed">
               <p>
-                Ben je op zoek naar persoonlijke kraamzorg in Oostvoorne? Dan
-                wil je vooral kunnen vertrouwen op iemand die rustig,
-                deskundig en betrokken is. Tijdens de kraamtijd ondersteun ik
-                jullie bij de verzorging van jullie baby en help ik jullie om
-                samen jullie draai te vinden als gezin.
+                Ben je op zoek naar persoonlijke kraamzorg in de gemeente
+                Voorne aan Zee? Dan wil je vooral kunnen vertrouwen op iemand
+                die rustig, deskundig en betrokken is. Tijdens de kraamtijd
+                ondersteun ik jullie bij de verzorging van jullie baby en help
+                ik jullie om samen jullie draai te vinden als gezin.
               </p>
 
               <p>
                 Als zelfstandig kraamverzorgende kom ik bij jullie thuis in
-                Oostvoorne. Ook gezinnen in Rockanje, Tinte en de omliggende
-                omgeving kunnen bij mij terecht. Ik neem de tijd om jullie
+                alle kernen van Voorne aan Zee: <strong>Oostvoorne,
+                Rockanje, Tinte, Vierpolders, Zwartewaal, Nieuwenhoorn,
+                Nieuw-Helvoet en Oudenhoorn</strong>. Ik neem de tijd om jullie
                 situatie en wensen te leren kennen, zodat de begeleiding
                 aansluit bij wat jullie nodig hebben.
               </p>
@@ -216,7 +245,7 @@ export default function Page() {
                 de mogelijkheid om zonder medische indicatie te bevallen met
                 de eigen verloskundige en een persoonlijke kraamverzorgende.
                 Wanneer jullie daarna naar huis mogen, kan de kraamzorg thuis
-                in Oostvoorne worden voortgezet.
+                in Voorne aan Zee worden voortgezet.
               </p>
 
               <p>
@@ -240,6 +269,28 @@ export default function Page() {
                 </li>
               ))}
             </ul>
+
+            {/* Kernen-overzicht */}
+            <div className="mt-12 rounded-2xl bg-cream p-6 sm:p-8">
+              <h3 className="h-serif mb-4 text-xl">
+                Alle kernen van Voorne aan Zee
+              </h3>
+              <p className="mb-5 text-sm leading-relaxed text-ink/70">
+                De gemeente Voorne aan Zee is per 1 januari 2023 ontstaan uit
+                de fusie van Brielle, Hellevoetsluis en Westvoorne. Ik kom bij
+                gezinnen thuis in alle onderstaande kernen:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {kernen.map((kern) => (
+                  <span
+                    key={kern.name}
+                    className="rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-espresso shadow-card"
+                  >
+                    {kern.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -251,7 +302,7 @@ export default function Page() {
             <p className="eyebrow mb-3">Goed om te weten</p>
 
             <h2 className="h-serif text-3xl sm:text-4xl">
-              Veelgestelde vragen over kraamzorg in Oostvoorne
+              Veelgestelde vragen over kraamzorg in Voorne aan Zee
             </h2>
           </div>
 
@@ -282,7 +333,7 @@ export default function Page() {
       </section>
 
       <CtaBand
-        eyebrow="Woon je in Oostvoorne of omgeving?"
+        eyebrow="Woon je in Voorne aan Zee?"
         title="Vraag persoonlijke kraamzorg aan"
         description="Neem telefonisch of via WhatsApp contact op met Cindy en bespreek jullie wensen voor de kraamperiode."
       />
