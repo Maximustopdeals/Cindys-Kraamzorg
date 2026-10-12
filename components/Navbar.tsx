@@ -19,7 +19,7 @@ const links = [
 const werkgebieden = [
   { href: "/kraamzorg-hellevoetsluis", label: "Hellevoetsluis" },
   { href: "/kraamzorg-brielle", label: "Brielle" },
-  { href: "/kraamzorg-oostvoorne", label: "Oostvoorne" },
+  { href: "/kraamzorg-oostvoorne", label: "Voorne aan Zee" },
   { href: "/kraamzorg-spijkenisse", label: "Spijkenisse" },
 ];
 
@@ -255,6 +255,4 @@ export default function Navbar() {
         </ul>
       </div>
       )}
-    </header>
-  );
-}
+   
