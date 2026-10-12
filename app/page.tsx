@@ -7,7 +7,7 @@ import { AANMELD_URL } from "@/components/Navbar";
 export const metadata: Metadata = {
   title: "Cindy's Kraamzorg | Persoonlijke kraamzorg in Hellevoetsluis & Zuid-Holland",
   description:
-    "Kraamzorg met rust, liefde en 22 jaar ervaring. Erkend door KCKZ. Actief in Hellevoetsluis, Brielle, Oostvoorne en Spijkenisse. Vraag je kraamzorg eenvoudig online aan.",
+    "Kraamzorg met rust, liefde en 23 jaar ervaring. Erkend door KCKZ. Actief in Hellevoetsluis, Brielle, Voorne aan Zee en Spijkenisse. Vraag je kraamzorg eenvoudig online aan.",
 };
 
 const regios = [
@@ -22,9 +22,9 @@ const regios = [
     text: "Persoonlijke kraamzorg in de vestingstad, afgestemd op jouw gezin.",
   },
   {
-    name: "Oostvoorne",
+    name: "Voorne aan Zee",
     href: "/kraamzorg-oostvoorne",
-    text: "Liefdevolle begeleiding in de eerste dagen, gewoon bij jou thuis.",
+    text: "Liefdevolle begeleiding in Oostvoorne, Rockanje, Tinte en omgeving.",
   },
   {
     name: "Spijkenisse",
@@ -46,13 +46,13 @@ const diensten = [
   },
   {
     title: "Maak kennis met Cindy",
-    text: "Erkend door KCKZ, ruim 22 jaar ervaring en een hart voor gezinnen. Leer Cindy kennen.",
+    text: "Erkend door KCKZ, ruim 23 jaar ervaring en een hart voor gezinnen. Leer Cindy kennen.",
     cta: { href: "/over-mij", label: "Over mij" },
   },
 ];
 
 const stats = [
-  { value: "22+", label: "Jaar ervaring" },
+  { value: "23+", label: "Jaar ervaring" },
   { value: "100+", label: "Gezinnen verzorgd" },
   { value: "24/7", label: "Voor jou beschikbaar" },
 ];
@@ -62,7 +62,6 @@ export default function Home() {
     <>
       {/* ============ HERO ============ */}
       <section className="relative flex min-h-[92vh] items-center overflow-hidden">
-        {/* Fullscreen achtergrondfoto: Cindy + zusje + baby */}
         <Image
           src="/images/cindy-hero.webp"
           alt="Cindy van Cindy's Kraamzorg met pasgeboren baby en zusje — Persoonlijke kraamzorg in Hellevoetsluis"
@@ -73,35 +72,27 @@ export default function Home() {
           className="object-cover object-[75%_center] lg:object-right"
         />
 
-        {/* Luxe gradient: donker aan de linkerkant voor tekstleesbaarheid, transparant naar rechts */}
         <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/55 to-espresso/10" />
-        {/* Subtiele warme gloed onderaan */}
         <div className="absolute inset-0 bg-gradient-to-t from-sand/90 via-transparent to-transparent" />
 
-        {/* Content container: links uitgelijnd op desktop */}
         <div className="container-site relative z-10 py-28 lg:py-36">
           <div className="max-w-xl text-center sm:text-left">
-            {/* Badge */}
             <p className="eyebrow animate-fade-in mb-6 !text-blush">
               Persoonlijk &amp; professioneel
             </p>
 
-            {/* H1 */}
             <h1 className="h-serif animate-fade-up text-4xl leading-[1.1] text-white sm:text-5xl lg:text-6xl">
               Kraamzorg met rust, liefde &amp; ervaring in Hellevoetsluis
             </h1>
 
-            {/* Sierlijn */}
             <div className="my-8 h-px w-24 bg-blush/60 mx-auto sm:mx-0" />
 
-            {/* Paragraaf */}
             <p className="animate-fade-up text-lg leading-relaxed text-white/90 [animation-delay:150ms]">
               Bij Cindy&apos;s Kraamzorg draait alles om jouw vertrouwen en comfort.
-              Met ruim 22 jaar ervaring begeleid ik jullie eerste dagen als gezin,
+              Met ruim 23 jaar ervaring begeleid ik jullie eerste dagen als gezin,
               warm, deskundig en volledig afgestemd op jullie wensen.
             </p>
 
-            {/* Knoppen */}
             <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center sm:justify-start gap-4 [animation-delay:300ms]">
               <a
                 href={AANMELD_URL}
@@ -116,7 +107,6 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Vertrouwensbadge */}
             <p className="animate-fade-in mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 [animation-delay:450ms]">
               Erkend door KCKZ · Hellevoetsluis &amp; omgeving
             </p>
@@ -126,7 +116,6 @@ export default function Home() {
 
       {/* ============ FELICITATIE — high-end tekstsectie ============ */}
       <section className="relative overflow-hidden py-24 sm:py-32">
-        {/* Subtiel decoratief element op de achtergrond */}
         <div
           className="pointer-events-none absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blush/30 blur-3xl"
           aria-hidden="true"
@@ -134,31 +123,25 @@ export default function Home() {
 
         <div className="container-site relative">
           <div className="mx-auto max-w-3xl text-center">
-            {/* Badge */}
             <p className="eyebrow mb-4">Een bijzondere tijd</p>
 
-            {/* Sierlijn boven titel */}
             <div className="mx-auto mb-8 flex items-center justify-center gap-4">
               <span className="h-px w-16 bg-terracotta/40" />
               <span className="text-terracotta">✦</span>
               <span className="h-px w-16 bg-terracotta/40" />
             </div>
 
-            {/* H2 */}
             <h2 className="h-serif text-4xl leading-tight sm:text-5xl">
               Proficiat met je zwangerschap!
             </h2>
 
-            {/* Sierlijn onder titel */}
             <div className="divider-leaf mx-auto my-8">✦</div>
 
-            {/* Paragraaf 1 — groter, sierlijk */}
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl">
               Een warme felicitatie met de prachtige spruit die groeit in jouw buik.
               Het is een periode vol vreugde, maar ook met vragen en spanning.
             </p>
 
-            {/* Paragraaf 2 */}
             <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-ink/70">
               Bij Cindy&apos;s Kraamzorg in <strong>Hellevoetsluis &amp; omliggende gebieden</strong> vind ik
               het belangrijk dat je je gerust voelt. Ik sta klaar om je met
@@ -166,7 +149,6 @@ export default function Home() {
               tot een zorgeloze overdracht.
             </p>
 
-            {/* CTA */}
             <div className="mt-12">
               <a
                 href={AANMELD_URL}
@@ -178,7 +160,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Subtiele ondertitel */}
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-ink/40">
               Persoonlijk · Betrokken · Ervaren
             </p>
@@ -195,7 +176,7 @@ export default function Home() {
               Persoonlijke kraamzorg in jouw buurt
             </h2>
             <p className="mt-4">
-              Woon je in Hellevoetsluis, Brielle, Oostvoorne of Spijkenisse? Als
+              Woon je in Hellevoetsluis, Brielle, Voorne aan Zee of Spijkenisse? Als
               ervaren kraamverzorgende bied ik professionele begeleiding precies
               waar jij het nodig hebt: bij jou thuis.
             </p>
@@ -212,8 +193,8 @@ export default function Home() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-ink/60">
-            Van borstvoedingsadvies tot praktische babyverzorging waar je ook
-            woont in de regio, bel gerust voor een kennismaking.
+            Ook beschikbaar in Rhoon, Poortugaal, Barendrecht, Rotterdam-Zuid en
+            Goeree-Overflakkee — en verder weg in overleg.
           </p>
         </div>
       </section>
@@ -313,7 +294,6 @@ export default function Home() {
 
       {/* ============ KCKZ — high-end tekstsectie ============ */}
       <section className="relative overflow-hidden bg-cream py-24 sm:py-32">
-        {/* Subtiel decoratief element */}
         <div
           className="pointer-events-none absolute -left-32 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-terracotta/10 blur-3xl"
           aria-hidden="true"
@@ -321,31 +301,25 @@ export default function Home() {
 
         <div className="container-site relative">
           <div className="mx-auto max-w-3xl text-center">
-            {/* Badge */}
             <p className="eyebrow mb-4">Erkend &amp; gecertificeerd</p>
 
-            {/* Sierlijn boven titel */}
             <div className="mx-auto mb-8 flex items-center justify-center gap-4">
               <span className="h-px w-16 bg-terracotta/40" />
               <span className="text-terracotta">✦</span>
               <span className="h-px w-16 bg-terracotta/40" />
             </div>
 
-            {/* H2 */}
             <h2 className="h-serif text-4xl leading-tight sm:text-5xl">
               Kwaliteit die je kunt vertrouwen
             </h2>
 
-            {/* Sierlijn onder titel */}
             <div className="divider-leaf mx-auto my-8">✦</div>
 
-            {/* Paragraaf 1 */}
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl">
               Cindy&apos;s Kraamzorg is erkend door <strong>KCKZ</strong> en voldoet aan de
               strenge kwaliteitseisen van <strong>KIWA</strong>-certificering.
             </p>
 
-            {/* Paragraaf 2 */}
             <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-ink/70">
               Je kiest dus niet alleen voor warmte, maar ook voor zorg die
               professioneel is geborgd. Daarnaast werkt Cindy samen met verloskundigen
@@ -353,7 +327,6 @@ export default function Home() {
               zorgnetwerk.
             </p>
 
-            {/* Certificerings-badges */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
               <span className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-espresso shadow-card">
                 KCKZ Erkend
@@ -366,7 +339,6 @@ export default function Home() {
               </span>
             </div>
 
-            {/* Subtiele ondertitel */}
             <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-ink/40">
               Kwaliteit · Vertrouwen · Professionaliteit
             </p>
