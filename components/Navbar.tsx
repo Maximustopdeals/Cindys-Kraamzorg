@@ -24,6 +24,7 @@ const werkgebieden = [
   { href: "/kraamzorg-rhoon-poortugaal", label: "Rhoon & Poortugaal" },
   { href: "/kraamzorg-barendrecht", label: "Barendrecht" },
   { href: "/kraamzorg-rotterdam-zuid", label: "Rotterdam-Zuid" },
+  { href: "/kraamzorg-goeree-overflakkee", label: "Goeree-Overflakkee" },
 ];
 
 export default function Navbar() {
