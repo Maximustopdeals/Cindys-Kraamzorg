@@ -25,8 +25,9 @@ const werkgebieden = [
   { href: "/kraamzorg-brielle", label: "Brielle" },
   { href: "/kraamzorg-oostvoorne", label: "Voorne aan Zee" },
   { href: "/kraamzorg-spijkenisse", label: "Spijkenisse" },
-  { href: "/contact", label: "Rhoon · Poortugaal · Barendrecht" },
-  { href: "/contact", label: "Rotterdam-Zuid · Goeree-Overflakkee" },
+  { href: "/kraamzorg-rhoon-poortugaal", label: "Rhoon & Poortugaal" },
+  { href: "/contact", label: "Barendrecht · Rotterdam-Zuid" },
+  { href: "/contact", label: "Goeree-Overflakkee" },
   { href: "/contact", label: "Verder weg: in overleg" },
 ];
 
